@@ -4,11 +4,32 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import PageLayout from '@/components/layout/PageLayout';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import AnimatedSection from '@/components/ui/AnimatedSection';
 import AnimatedText from '@/components/ui/AnimatedText';
 import AnimatedIcon from '@/components/ui/AnimatedIcon';
-import AnimatedIllustration from '@/components/ui/AnimatedIllustration';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import VideoBackground from '@/components/ui/VideoBackground';
+import RotatingText from '@/components/ui/RotatingText';
 import { FaChartLine, FaUsers, FaCogs, FaRocket, FaLaptopCode, FaClipboardCheck } from 'react-icons/fa';
+
+// Function to get the appropriate image for each feature
+function getFeatureImage(index: number): string {
+  switch (index) {
+    case 0: // CRM Solutions
+      return '/images/photos/Laptop_CRM_dashboard.png';
+    case 1: // Marketing Automation
+      return '/images/photos/Marketing_growth_success.jpg';
+    case 2: // Systems Integration
+      return '/images/photos/Static_tech_image.png';
+    case 3: // Growth Tools
+      return '/images/photos/illustrations/Arrows_segments_marketing.png';
+    case 4: // Custom Solutions
+      return '/images/photos/Abstract_laptop.png';
+    case 5: // Task Management
+      return '/images/photos/Table_with_laptops.png';
+    default:
+      return '/images/photos/Two_People_looking_at_screen.png';
+  }
+}
 
 const testimonials = [
   {
@@ -67,25 +88,20 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative min-h-screen pt-20 overflow-hidden bg-primary-light dark:bg-primary-navy">
-          {/* Background Pattern */}
+          {/* Video Background */}
+          <VideoBackground videoSrc="/videos/Animation_video.mp4" overlayOpacity={70} />
+          
+          {/* Background Pattern - on top of video for texture */}
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] z-10"></div>
           
           {/* Gradient Orbs - Enhanced with animations */}
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow"></div>
-          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow"></div>
+          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow z-10"></div>
+          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow z-10"></div>
           
           {/* Additional decorative elements */}
-          <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-primary-blue/30 rounded-full filter blur-xl animate-float"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-primary-blue/20 rounded-full filter blur-lg animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-primary-blue/20 rounded-full filter blur-md animate-float" style={{ animationDelay: '2s' }}></div>
-          
-          {/* Animated Lines */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#0066CC22_1px,transparent_1px),linear-gradient(to_bottom,#0066CC22_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3498DB33_1px,transparent_1px),linear-gradient(to_bottom,#3498DB33_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]"></div>
-          </div>
-          
-          {/* Uncomment when you have a video */}
-          {/* <VideoBackground videoSrc="/videos/hero-background.mp4" overlayOpacity={60} /> */}
+          <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-primary-blue/30 rounded-full filter blur-xl animate-float z-10"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-primary-blue/20 rounded-full filter blur-lg animate-float z-10" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-primary-blue/20 rounded-full filter blur-md animate-float z-10" style={{ animationDelay: '2s' }}></div>
 
           <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -96,7 +112,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="px-4 py-1 bg-primary-blue/10 dark:bg-primary-blue/20 text-primary-blue font-semibold rounded-full text-sm inline-block"
+                    className="px-4 py-1 bg-white/20 text-white font-semibold rounded-full text-sm inline-block"
                   >
                     Innovative CRM Solutions
                   </motion.span>
@@ -104,19 +120,27 @@ export default function Home() {
                 
                 <AnimatedText 
                   text="Transform Your Business with" 
-                  className="text-4xl font-bold tracking-tight text-primary-navy dark:text-white sm:text-5xl lg:text-6xl lg:leading-tight"
+                  className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-tight"
                 />
                 <AnimatedText 
-                  text="TAS Solutions" 
-                  className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl lg:leading-tight mt-2"
-                  highlight={true}
+                  text="TAS Solutions:" 
+                  className="text-4xl font-bold tracking-tight text-sky-300 sm:text-5xl lg:text-6xl lg:leading-tight mt-2"
+                  highlight={false}
                 />
+                <div className="mt-2 mb-6">
+                  <RotatingText 
+                    words={['CRM Solutions', 'Marketing Automation', 'Business Analytics', 'System Integration', 'Growth Tools']} 
+                    interval={4000}
+                    textColor="text-white"
+                    className="text-2xl sm:text-3xl lg:text-4xl"
+                  />
+                </div>
                 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="mt-6 text-lg leading-relaxed text-primary-slate dark:text-gray-300"
+                  className="mt-6 text-lg leading-relaxed text-white/90"
                 >
                   Empowering enterprises with cutting-edge CRM solutions and marketing automation.
                   Drive growth, enhance efficiency, and deliver exceptional customer experiences.
@@ -143,13 +167,40 @@ export default function Home() {
                   transition={{ delay: 1, duration: 0.8 }}
                   className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700"
                 >
-                  <p className="text-sm text-primary-slate dark:text-gray-400 mb-3">Trusted by leading companies worldwide</p>
-                  <div className="flex flex-wrap items-center gap-6">
-                    {['Company A', 'Company B', 'Company C'].map((company, i) => (
-                      <div key={company} className="text-gray-400 dark:text-gray-500 font-semibold text-sm">
-                        {company}
-                      </div>
-                    ))}
+                  <p className="text-sm text-white/70 mb-3">Trusted by leading companies worldwide</p>
+                  <div className="flex flex-wrap items-center gap-8">
+                    <div className="h-8 relative w-24">
+                      <Image 
+                        src="/images/photos/Salesforce_logo.png" 
+                        alt="Salesforce" 
+                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        fill
+                      />
+                    </div>
+                    <div className="h-8 relative w-24">
+                      <Image 
+                        src="/images/photos/Microsoft_dynamics_logo.png" 
+                        alt="Microsoft Dynamics" 
+                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        fill
+                      />
+                    </div>
+                    <div className="h-7 relative w-20">
+                      <Image 
+                        src="/images/photos/Hubspot_logo.png" 
+                        alt="HubSpot" 
+                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        fill
+                      />
+                    </div>
+                    <div className="h-8 relative w-24">
+                      <Image 
+                        src="/images/photos/Adobe_marketo_engage.png" 
+                        alt="Adobe Marketo Engage" 
+                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        fill
+                      />
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -160,69 +211,23 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="relative hidden lg:flex items-center justify-center"
               >
-                {/* Placeholder for hero image - Replace when you have the actual image */}
-                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-blue/10 to-primary-navy/10 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+                {/* Hero image using actual image */}
+                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/photos/Laptop_CRM_dashboard.png"
+                    alt="CRM Dashboard on laptop"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                  
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-navy/20 to-transparent"></div>
                   
                   {/* Decorative elements */}
                   <div className="absolute top-10 right-10 w-40 h-40 bg-primary-blue/20 rounded-full filter blur-xl animate-pulse-slow"></div>
                   <div className="absolute bottom-10 left-10 w-40 h-40 bg-primary-blue/20 rounded-full filter blur-xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-                  
-                  {/* Placeholder text */}
-                  <div className="relative z-10 text-center">
-                    <div className="text-primary-navy/30 dark:text-white/30 text-xl font-bold">
-                      [HERO IMAGE PLACEHOLDER]
-                      <div className="text-sm mt-2 text-center">Add your hero image to /public/images/photos/hero.jpg</div>
-                    </div>
-                    
-                    {/* Decorative icons */}
-                    <div className="flex justify-center mt-6 gap-6">
-                      <motion.div 
-                        animate={{ y: [0, -10, 0] }} 
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center"
-                      >
-                        <span className="text-primary-blue/60 text-xl">📊</span>
-                      </motion.div>
-                      <motion.div 
-                        animate={{ y: [0, -10, 0] }} 
-                        transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center"
-                      >
-                        <span className="text-primary-blue/60 text-xl">💼</span>
-                      </motion.div>
-                      <motion.div 
-                        animate={{ y: [0, -10, 0] }} 
-                        transition={{ duration: 2, delay: 1, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center"
-                      >
-                        <span className="text-primary-blue/60 text-xl">🚀</span>
-                      </motion.div>
-                    </div>
-                  </div>
                 </div>
-                
-                {/* Uncomment when you have the actual image */}
-                {/* 
-                <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/photos/hero.jpg"
-                    alt="Business team collaborating"
-                    width={1920}
-                    height={1080}
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                */}
-                
-                {/* Uncomment when you want to use a 3D model instead */}
-                {/*
-                <SplineModel 
-                  sceneUrl="YOUR_SPLINE_SCENE_URL"
-                  className="w-full h-[500px]"
-                />
-                */}
               </motion.div>
             </div>
           </div>
@@ -283,13 +288,26 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     <div className="relative z-10">
-                      <AnimatedIcon 
-                        icon={feature.icon} 
-                        delay={0.1 + index * 0.1} 
-                        variant={variant}
-                        size="lg"
-                        className="mb-5"
-                      />
+                      {/* Feature image based on index */}
+                      <div className="mb-6 h-48 relative rounded-lg overflow-hidden">
+                        <Image
+                          src={getFeatureImage(index)}
+                          alt={feature.title}
+                          fill
+                          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/20 to-transparent"></div>
+                        
+                        {/* Icon overlay on the image */}
+                        <div className="absolute bottom-3 right-3">
+                          <AnimatedIcon 
+                            icon={feature.icon} 
+                            delay={0.1 + index * 0.1} 
+                            variant={variant}
+                            size="md"
+                          />
+                        </div>
+                      </div>
                       
                       <h3 className="mt-4 text-xl font-semibold text-primary-navy dark:text-white group-hover:text-primary-blue dark:group-hover:text-primary-blue transition-colors duration-300">
                         {feature.title}
@@ -318,10 +336,21 @@ export default function Home() {
         
         {/* Testimonials Section */}
         <AnimatedSection className="py-24 bg-gradient-primary text-white relative overflow-hidden">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/photos/Two_People_looking_at_screen.png"
+              alt="Collaboration"
+              fill
+              className="object-cover object-center opacity-10"
+            />
+            <div className="absolute inset-0 bg-gradient-primary opacity-90"></div>
+          </div>
+          
           {/* Decorative elements */}
-          <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 -translate-x-20"></div>
-          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none z-10"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 -translate-x-20 z-10"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20 z-10"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -383,15 +412,22 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 -translate-x-20"></div>
           <div className="absolute bottom-0 left-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20"></div>
           
-          {/* Animated particles */}
+          {/* Animated particles with fixed positions to prevent hydration mismatch */}
           <div className="absolute inset-0 overflow-hidden">
-            {[...Array(6)].map((_, i) => (
+            {[
+              { top: "15%", left: "80%" },
+              { top: "82%", left: "25%" },
+              { top: "23%", left: "97%" },
+              { top: "85%", left: "81%" },
+              { top: "17%", left: "8%" },
+              { top: "37%", left: "84%" }
+            ].map((position, i) => (
               <motion.div
                 key={i}
                 className="absolute w-4 h-4 rounded-full bg-white/20"
                 style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
+                  top: position.top,
+                  left: position.left,
                 }}
                 animate={{
                   y: [0, -100],
@@ -433,7 +469,7 @@ export default function Home() {
               
               <AnimatedButton 
                 primary={false} 
-                className="bg-transparent border-2 border-white text-white hover:bg-white/10"
+                className="bg-transparent border-2 border-white text-primary-navy bg-white hover:bg-white/90"
               >
                 View Case Studies
               </AnimatedButton>
