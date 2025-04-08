@@ -1,115 +1,197 @@
+'use client';
+
 import Link from 'next/link';
-import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaLinkedin, FaTwitter, FaFacebook, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
+  };
+  
   return (
-    <footer className="bg-primary-navy dark:bg-primary-slate text-white">
+    <footer className="bg-primary-navy dark:bg-primary-slate text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
+      
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <motion.div 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {/* Company Info */}
-        <div className="space-y-4">
-          <h3 className="text-xl font-bold text-primary-blue">TAS Solutions</h3>
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-2xl font-bold text-gradient-primary inline-block">TAS Solutions</h3>
           <p className="text-sm text-gray-300 dark:text-gray-200 leading-relaxed">
             Empowering businesses with innovative CRM solutions and cutting-edge marketing automation technologies.
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-primary-blue hover:text-white transition-colors">
-              <FaLinkedin size={24} />
-            </a>
-            <a href="#" className="text-primary-blue hover:text-white transition-colors">
-              <FaTwitter size={24} />
-            </a>
-            <a href="#" className="text-primary-blue hover:text-white transition-colors">
-              <FaFacebook size={24} />
-            </a>
+          <div className="pt-2">
+            <div className="flex items-center space-x-2 text-sm mb-2">
+              <FaMapMarkerAlt className="text-primary-blue" />
+              <span>123 Business Avenue, Tech City</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm mb-2">
+              <FaPhone className="text-primary-blue" />
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <FaEnvelope className="text-primary-blue" />
+              <span>info@tassolutions.com</span>
+            </div>
           </div>
-        </div>
+          <div className="flex space-x-4 pt-2">
+            <motion.a 
+              href="#" 
+              className="text-primary-blue hover:text-white transition-colors"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaLinkedin size={24} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-primary-blue hover:text-white transition-colors"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaTwitter size={24} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-primary-blue hover:text-white transition-colors"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaFacebook size={24} />
+            </motion.a>
+          </div>
+        </motion.div>
 
         {/* Quick Links */}
-        <div className="space-y-4">
+        <motion.div className="space-y-4" variants={itemVariants}>
           <h3 className="text-xl font-bold text-primary-blue">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/about" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/about" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/services" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/contact" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
-                Blog
+              <Link href="/" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+                Home
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Services */}
-        <div className="space-y-4">
+        <motion.div className="space-y-4" variants={itemVariants}>
           <h3 className="text-xl font-bold text-primary-blue">Services</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/services/crm" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/services/crm" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 CRM Solutions
               </Link>
             </li>
             <li>
-              <Link href="/services/marketing" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/services/marketing" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Marketing Automation
               </Link>
             </li>
             <li>
-              <Link href="/services/integration" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
+              <Link href="/services/integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Systems Integration
               </Link>
             </li>
             <li>
-              <Link href="/services/consulting" className="text-gray-300 dark:text-gray-200 hover:text-primary-blue transition-colors">
-                IT Consulting
+              <Link href="/services/consulting" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+                Consulting
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Contact Info */}
-        <div className="space-y-4">
-          <h3 className="text-xl font-bold text-primary-blue">Contact Us</h3>
-          <ul className="space-y-2 text-gray-300 dark:text-gray-200">
-            <li>123 Business Avenue</li>
-            <li>Suite 200</li>
-            <li>New York, NY 10001</li>
-            <li className="text-primary-blue hover:text-white transition-colors">
-              <a href="mailto:contact@tas-solutions.com">contact@tas-solutions.com</a>
-            </li>
-            <li className="text-primary-blue hover:text-white transition-colors">
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 dark:border-gray-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400 dark:text-gray-300">
-            © {new Date().getFullYear()} TAS Solutions. All rights reserved.
+        {/* Newsletter */}
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-xl font-bold text-primary-blue">Stay Updated</h3>
+          <p className="text-sm text-gray-300 dark:text-gray-200">
+            Subscribe to our newsletter for the latest updates and insights.
           </p>
-          <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="/privacy" className="text-sm text-gray-400 dark:text-gray-300 hover:text-primary-blue transition-colors">
+          <form className="space-y-2">
+            <div>
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="w-full px-4 py-2 rounded-md bg-primary-slate/50 border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-400"
+                required
+              />
+            </div>
+            <motion.button
+              type="submit"
+              className="w-full bg-primary-blue hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Subscribe
+            </motion.button>
+          </form>
+        </motion.div>
+      </motion.div>
+
+      {/* Copyright */}
+      <div className="bg-primary-slate dark:bg-primary-navy/80 py-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            &copy; {new Date().getFullYear()} TAS Solutions. All rights reserved.
+          </motion.p>
+          <motion.div 
+            className="flex space-x-4 mt-2 md:mt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/privacy" className="hover:text-primary-blue transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-gray-400 dark:text-gray-300 hover:text-primary-blue transition-colors">
+            <Link href="/terms" className="hover:text-primary-blue transition-colors">
               Terms of Service
             </Link>
-          </div>
+            <Link href="/sitemap" className="hover:text-primary-blue transition-colors">
+              Sitemap
+            </Link>
+          </motion.div>
         </div>
       </div>
     </footer>

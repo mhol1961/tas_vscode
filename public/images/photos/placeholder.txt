@@ -1,0 +1,23 @@
+This is a placeholder file. Replace it with actual images for your website.
+
+Recommended image sizes:
+- Hero image: 1920x1080px
+- Testimonial photos: 200x200px (square)
+- Feature illustrations: 600x400px
+
+You can find free stock images at:
+- Unsplash (https://unsplash.com)
+- Pexels (https://pexels.com)
+- Pixabay (https://pixabay.com)
+
+For illustrations, consider:
+- unDraw (https://undraw.co)
+- DrawKit (https://drawkit.com)
+- Humaaans (https://humaaans.com)
+- Storyset (https://storyset.com)
+- Blush (https://blush.design)
+
+For videos, check out:
+- Mixkit (https://mixkit.co)
+- Pexels Videos (https://pexels.com/videos)
+- Coverr (https://coverr.co)
