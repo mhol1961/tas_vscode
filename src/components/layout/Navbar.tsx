@@ -26,6 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-primary-navy shadow-lg transition-colors duration-300">
+      {/* Restore original gradient div */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary-light/30 to-primary-blue/10 dark:from-primary-navy dark:to-primary-blue/30"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">

@@ -23,7 +23,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       className={`px-8 py-3 rounded-full font-medium transition-all duration-300 relative overflow-hidden ${
         primary 
           ? 'bg-gradient-primary text-white shadow-lg hover:shadow-xl' 
-          : 'bg-white/90 dark:bg-primary-slate text-primary-navy dark:text-white border-2 border-primary-blue/20'
+          : 'bg-white text-primary-navy border border-primary-blue/50 dark:bg-primary-slate dark:text-white dark:border-primary-slate'
       } ${className}`}
       onClick={onClick}
     >
