@@ -31,13 +31,13 @@ export default function Navbar() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 py-4">
+            <Link href="/" className="flex-shrink-0 py-2">
               <Image
                 src="/images/TAS_logo.png"
                 alt="TAS Logo"
                 width={140}
-                height={45}
-                className="h-9 w-auto"
+                height={60}
+                className="w-auto"
                 priority
               />
             </Link>
