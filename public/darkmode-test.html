@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Test</title>
+    <style>
+        /* Light mode styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* Dark mode styles */
+        html.dark body {
+            background-color: #2C3E50; 
+            color: white;
+        }
+        
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        
+        html.dark .status {
+            background-color: #34495E;
+            border-color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dark Mode Test Page</h1>
+    
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    
+    <div class="status" id="status">
+        <h3>Current Status:</h3>
+        <div id="isDark">Dark Mode: <span>Not detected</span></div>
+        <div id="htmlClass">HTML classes: <span>None</span></div>
+        <div id="localStorageTheme">localStorage theme value: <span>Not detected</span></div>
+    </div>
+    
+    <script>
+        // Update status display
+        function updateStatus() {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('isDark').innerHTML = `Dark Mode: <strong>${isDark ? 'ON' : 'OFF'}</strong>`;
+            document.getElementById('htmlClass').innerHTML = `HTML classes: <strong>${document.documentElement.className || 'None'}</strong>`;
+            
+            let theme = 'Not set';
+            try {
+                theme = localStorage.getItem('theme') || 'Not set';
+            } catch (e) {
+                theme = `Error: ${e.message}`;
+            }
+            document.getElementById('localStorageTheme').innerHTML = `localStorage theme value: <strong>${theme}</strong>`;
+        }
+        
+        // Toggle dark mode function
+        function toggleDarkMode() {
+            console.log("Toggle dark mode called");
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                try {
+                    localStorage.setItem('theme', 'light');
+                } catch (e) {
+                    console.error("Could not save theme to localStorage:", e);
+                }
+            } else {
+                document.documentElement.classList.add('dark');
+                try {
+                    localStorage.setItem('theme', 'dark');
+                } catch (e) {
+                    console.error("Could not save theme to localStorage:", e);
+                }
+            }
+            
+            updateStatus();
+        }
+        
+        // Initialize based on saved preference
+        function initDarkMode() {
+            try {
+                const theme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {
+                console.error("Error initializing dark mode:", e);
+            }
+            
+            updateStatus();
+        }
+        
+        // Run initialization
+        document.addEventListener('DOMContentLoaded', initDarkMode);
+        // Also run now in case the DOM is already loaded
+        if (document.readyState !== 'loading') {
+            initDarkMode();
+        }
+    </script>
+</body>
+</html>

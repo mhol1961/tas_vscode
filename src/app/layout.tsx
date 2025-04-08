@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import ThemeInitializer from "@/components/ThemeInitializer";
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -21,9 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans bg-white dark:bg-primary-navy dark:text-white">
-        <ThemeInitializer />
+    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* No scripts here to avoid hydration mismatches */}
+      </head>
+      <body className="font-sans bg-white dark:bg-primary-navy text-primary-navy dark:text-white transition-colors duration-300">
         {children}
       </body>
     </html>

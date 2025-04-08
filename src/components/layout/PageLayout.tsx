@@ -11,6 +11,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-light via-white to-primary-light dark:from-primary-navy dark:via-primary-slate dark:to-primary-navy">
       <Navbar />
       <main className="flex-grow">{children}</main>
+      {/* <main className="flex-grow">
+          <div className="p-4">Navbar interaction test. Content removed.</div>
+      </main> */}
       <Footer />
     </div>
   );

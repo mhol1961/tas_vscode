@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
-import ThemeToggle from './ThemeToggle';
+import FinalDarkModeToggle from '../FinalDarkModeToggle';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -25,9 +25,9 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-primary shadow-lg">
-      <div className="absolute inset-0 bg-black/5 dark:bg-black/20"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-primary-navy shadow-lg transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-light/30 to-primary-blue/10 dark:from-primary-navy dark:to-primary-blue/30"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 py-4">
@@ -49,14 +49,14 @@ export default function Navbar() {
                 {item.submenu ? (
                   <button
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className="text-white hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-white/10 hover:scale-105"
+                    className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
                   >
                     {item.name}
                   </button>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-white hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-white/10 hover:scale-105"
+                    className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
                   >
                     {item.name}
                   </Link>
@@ -85,18 +85,18 @@ export default function Navbar() {
               </div>
             ))}
             
-            {/* Add Theme Toggle */}
+            {/* Final Dark Mode Toggle */}
             <div className="ml-4">
-              <ThemeToggle />
+              <FinalDarkModeToggle />
             </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
+            <FinalDarkModeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-full text-white hover:text-white/90 hover:bg-white/10 focus:outline-none transition-all duration-150 hover:scale-105"
+              className="inline-flex items-center justify-center p-2 rounded-full text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-white/90 hover:bg-primary-light/50 dark:hover:bg-white/10 focus:outline-none transition-all duration-150 hover:scale-105"
             >
               {isMobileMenuOpen ? (
                 <HiX className="block h-6 w-6" />
@@ -115,7 +115,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-primary-navy dark:bg-dark-bg"
+            className="md:hidden bg-white dark:bg-primary-navy shadow-lg border-t border-gray-200 dark:border-gray-700"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
@@ -124,7 +124,7 @@ export default function Navbar() {
                     <>
                       <button
                         onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                        className="w-full text-left text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
+                        className="w-full text-left text-primary-navy dark:text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
                       >
                         {item.name}
                       </button>
@@ -139,7 +139,7 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="text-gray-300 hover:text-primary-blue block px-3 py-2 text-sm"
+                              className="text-primary-slate dark:text-gray-300 hover:text-primary-blue block px-3 py-2 text-sm"
                             >
                               {subItem.name}
                             </Link>
@@ -150,7 +150,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
+                      className="text-primary-navy dark:text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
                     >
                       {item.name}
                     </Link>

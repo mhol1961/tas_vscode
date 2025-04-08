@@ -1,0 +1,63 @@
+/* Dark mode styles - CSS variables */
+:root {
+  --bg-light: #FFFFFF;
+  --text-light: #2C3E50;
+  --bg-dark: #2C3E50;
+  --text-dark: #FFFFFF;
+  --primary-blue: #3498DB;
+  --primary-slate: #34495E;
+}
+
+/* Additional styles for elements that might not be covered by Tailwind's dark mode */
+/* These use the html.dark selector to match Tailwind's dark mode approach */
+
+/* Fix for elements that don't have dark mode variants */
+html.dark .bg-white:not([class*="dark:"]) {
+  background-color: var(--bg-dark);
+}
+
+html.dark .text-primary-navy:not([class*="dark:"]) {
+  color: var(--text-dark);
+}
+
+/* Ensure backgrounds for sections */
+html.dark section:not([class*="dark:bg-"]) {
+  background-color: var(--bg-dark);
+}
+
+/* Ensure text colors */
+html.dark p:not([class*="dark:"]),
+html.dark h1:not([class*="dark:"]),
+html.dark h2:not([class*="dark:"]),
+html.dark h3:not([class*="dark:"]),
+html.dark h4:not([class*="dark:"]),
+html.dark h5:not([class*="dark:"]),
+html.dark h6:not([class*="dark:"]),
+html.dark span:not([class*="dark:"]) {
+  color: var(--text-dark);
+}
+
+/* Improve border visibility in dark mode */
+html.dark .border:not([class*="dark:border"]),
+html.dark .border-t:not([class*="dark:border"]),
+html.dark .border-b:not([class*="dark:border"]),
+html.dark .border-l:not([class*="dark:border"]),
+html.dark .border-r:not([class*="dark:border"]) {
+  border-color: #4a5568;
+}
+
+/* Specific fixes for elements that might need them */
+html.dark footer:not([class*="dark:bg-"]) {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+html.dark nav:not([class*="dark:bg-"]) {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Add transitions for smoother theme changes */
+body, section, nav, footer, h1, h2, h3, h4, h5, h6, p, span, a, button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
