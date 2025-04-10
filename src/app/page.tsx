@@ -10,6 +10,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import VideoBackground from '@/components/ui/VideoBackground';
 import RotatingText from '@/components/ui/RotatingText';
 import { FaChartLine, FaUsers, FaCogs, FaRocket, FaLaptopCode, FaClipboardCheck } from 'react-icons/fa';
+import CircularServices from '@/components/sections/CircularServices';
 
 // Function to get the appropriate image for each feature
 function getFeatureImage(index: number): string {
@@ -87,7 +88,7 @@ export default function Home() {
     <PageLayout>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative min-h-screen pt-20 overflow-hidden bg-primary-light dark:bg-primary-navy transition-colors duration-300">
+        <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light dark:from-primary-navy dark:via-primary-slate dark:to-primary-navy transition-colors duration-300">
           {/* Video Background */}
           <VideoBackground videoSrc="/videos/Animation_video.mp4" overlayOpacity={70} />
           
@@ -103,159 +104,135 @@ export default function Home() {
           <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-primary-blue/20 rounded-full filter blur-lg animate-float z-10" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-primary-blue/20 rounded-full filter blur-md animate-float z-10" style={{ animationDelay: '2s' }}></div>
 
-          <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36"> {/* Reduced Padding */}
+            <div className="max-w-3xl mx-auto text-center">
               {/* Hero Content - Enhanced with animated components */}
-              <div className="max-w-xl">
-                <div className="mb-2 inline-block">
-                  <motion.span
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="px-4 py-1 bg-white/20 text-white font-semibold rounded-full text-sm inline-block"
-                  >
-                    Innovative CRM Solutions
-                  </motion.span>
-                </div>
-                
-                <AnimatedText 
-                  text="Transform Your Business with" 
-                  className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-tight"
-                />
-                <AnimatedText 
-                  text="TAS Solutions:" 
-                  className="text-4xl font-bold tracking-tight text-sky-300 sm:text-5xl lg:text-6xl lg:leading-tight mt-2"
-                  highlight={false}
-                />
-                <div className="mt-2 mb-6">
-                  <RotatingText 
-                    words={['CRM Solutions', 'Marketing Automation', 'Business Analytics', 'System Integration', 'Growth Tools']} 
-                    interval={4000}
-                    textColor="text-white"
-                    className="text-2xl sm:text-3xl lg:text-4xl"
-                  />
-                </div>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="mt-6 text-lg leading-relaxed text-white/90"
+              <div className="mb-2 inline-block">
+                <motion.span
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="px-4 py-1 bg-white/20 text-white font-semibold rounded-full text-sm inline-block"
                 >
-                  Empowering enterprises with cutting-edge CRM solutions and marketing automation.
-                  Drive growth, enhance efficiency, and deliver exceptional customer experiences.
-                </motion.p>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="mt-10 flex flex-wrap gap-4"
-                >
-                  <AnimatedButton primary={true}>
-                    Get Started
-                  </AnimatedButton>
-                  <AnimatedButton primary={false}>
-                    Learn More
-                  </AnimatedButton>
-                </motion.div>
-                
-                {/* Trust indicators */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700"
-                >
-                  <p className="text-sm text-white/70 mb-3">Trusted by leading companies worldwide</p>
-                  <div className="flex flex-wrap items-center gap-8">
-                    <div className="h-8 relative w-24">
-                      <Image 
-                        src="/images/photos/Salesforce_logo.png" 
-                        alt="Salesforce" 
-                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                        fill
-                      />
-                    </div>
-                    <div className="h-8 relative w-24">
-                      <Image 
-                        src="/images/photos/Microsoft_dynamics_logo.png" 
-                        alt="Microsoft Dynamics" 
-                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                        fill
-                      />
-                    </div>
-                    <div className="h-7 relative w-20">
-                      <Image 
-                        src="/images/photos/Hubspot_logo.png" 
-                        alt="HubSpot" 
-                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                        fill
-                      />
-                    </div>
-                    <div className="h-8 relative w-24">
-                      <Image 
-                        src="/images/photos/Adobe_marketo_engage.png" 
-                        alt="Adobe Marketo Engage" 
-                        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                        fill
-                      />
-                    </div>
-                  </div>
-                </motion.div>
+                  Innovative CRM Solutions
+                </motion.span>
               </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="relative hidden lg:flex items-center justify-center"
+              
+              <AnimatedText 
+                text="Transform Your Business with" 
+                className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-tight"
+              />
+              <AnimatedText 
+                text="TAS Solutions:" 
+                className="text-4xl font-bold tracking-tight text-sky-300 sm:text-5xl lg:text-6xl lg:leading-tight mt-2"
+                highlight={false}
+              />
+              <div className="mt-2">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-4"> {/* Set to white always */}
+                  Expert CRM & Marketing Automation Solutions
+                </h1>
+                <p className="text-lg leading-relaxed text-white/90">
+                  We empower mid-to-large enterprises to streamline operations, enhance customer engagement, and drive measurable growth through tailored technology strategies.
+                </p>
+              </div>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-2 text-lg leading-relaxed text-white/90"
               >
-                {/* Hero image using actual image */}
-                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/photos/Laptop_CRM_dashboard.png"
-                    alt="CRM Dashboard on laptop"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-navy/20 to-transparent"></div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute top-10 right-10 w-40 h-40 bg-primary-blue/20 rounded-full filter blur-xl animate-pulse-slow"></div>
-                  <div className="absolute bottom-10 left-10 w-40 h-40 bg-primary-blue/20 rounded-full filter blur-xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+                Empowering enterprises with cutting-edge CRM solutions and marketing automation.
+                Drive growth, enhance efficiency, and deliver exceptional customer experiences.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="mt-16 flex flex-wrap gap-4"
+              >
+                <AnimatedButton primary={true}>
+                  Request a Consultation
+                </AnimatedButton>
+                <AnimatedButton primary={false}>
+                  Learn More
+                </AnimatedButton>
+              </motion.div>
+              
+              {/* Trust indicators */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700"
+              >
+                <p className="text-sm text-white/70 mb-3">Trusted by leading companies worldwide</p>
+                <div className="flex flex-wrap items-center gap-8">
+                  <div className="h-8 relative w-24">
+                    <Image 
+                      src="/images/photos/Salesforce_logo.png" 
+                      alt="Salesforce" 
+                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      fill
+                    />
+                  </div>
+                  <div className="h-8 relative w-24">
+                    <Image 
+                      src="/images/photos/Microsoft_dynamics_logo.png" 
+                      alt="Microsoft Dynamics" 
+                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      fill
+                    />
+                  </div>
+                  <div className="h-7 relative w-20">
+                    <Image 
+                      src="/images/photos/Hubspot_logo.png" 
+                      alt="HubSpot" 
+                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      fill
+                    />
+                  </div>
+                  <div className="h-8 relative w-24">
+                    <Image 
+                      src="/images/photos/Adobe_marketo_engage.png" 
+                      alt="Adobe Marketo Engage" 
+                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      fill
+                    />
+                  </div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
+        {/* Circular Services Section */}
+        <CircularServices />
+
         {/* Features Section */}
-        <AnimatedSection className="py-24 bg-white dark:bg-primary-slate transition-colors duration-300 relative overflow-hidden">
+        <AnimatedSection className="py-16 lg:py-24 bg-white dark:bg-primary-slate transition-colors duration-300 relative overflow-hidden"> {/* Reduced Padding */}
           {/* Decorative elements */}
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none"></div>
-          <div className="absolute -top-40 right-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 rounded-full filter blur-3xl"></div>
-          <div className="absolute -bottom-40 left-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 rounded-full filter blur-3xl"></div>
+          <div className="absolute -top-40 right-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute -bottom-40 left-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 rounded-full filter blur-3xl"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-24">
               <motion.h2 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-base text-primary-blue font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 rounded-full"
+                className="text-base text-primary-blue dark:text-gray-100 font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 dark:bg-primary-blue/30 rounded-full"
               >
                 Solutions
               </motion.h2>
               
               <AnimatedText 
                 text="Powerful Features" 
-                className="text-3xl font-bold text-primary-navy dark:text-white sm:text-4xl"
-                highlight={true}
+                className="text-3xl font-bold text-primary-navy dark:text-primary-blue sm:text-4xl"
+                highlight={false}
               />
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -268,7 +245,7 @@ export default function Home() {
               </motion.p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
               {features.map((feature, index) => {
                 // Alternate icon variants for visual interest
                 const variants = ['primary', 'secondary', 'gradient', 'outline'];
@@ -282,38 +259,27 @@ export default function Home() {
                     transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-                    className="group bg-white dark:bg-primary-navy/50 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary-blue/20 dark:hover:border-primary-blue/30 transition-all duration-300 relative overflow-hidden"
+                    className="group bg-gray-50 dark:bg-primary-navy/50 p-8 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:border-primary-blue/20 dark:hover:border-primary-blue/30 transition-all duration-300 relative overflow-hidden"
                   >
                     {/* Background gradient that appears on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     <div className="relative z-10">
-                      {/* Feature image based on index */}
-                      <div className="mb-6 h-48 relative rounded-lg overflow-hidden">
-                        <Image
-                          src={getFeatureImage(index)}
-                          alt={feature.title}
-                          fill
-                          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      {/* Icon moved to top of card content */}
+                      <div className="mb-6 flex justify-center">
+                        <AnimatedIcon 
+                          icon={feature.icon} 
+                          delay={0.1 + index * 0.1} 
+                          variant={variant}
+                          size="lg" // Make icon larger as primary visual
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/20 to-transparent"></div>
-                        
-                        {/* Icon overlay on the image */}
-                        <div className="absolute bottom-3 right-3">
-                          <AnimatedIcon 
-                            icon={feature.icon} 
-                            delay={0.1 + index * 0.1} 
-                            variant={variant}
-                            size="md"
-                          />
-                        </div>
                       </div>
                       
-                      <h3 className="mt-4 text-xl font-semibold text-primary-navy dark:text-white group-hover:text-primary-blue dark:group-hover:text-primary-blue transition-colors duration-300">
+                      <h3 className="mt-4 text-xl font-semibold text-primary-navy dark:text-white group-hover:text-primary-blue dark:group-hover:text-primary-blue transition-colors duration-300 text-center">
                         {feature.title}
                       </h3>
                       
-                      <p className="mt-3 text-primary-slate dark:text-gray-300">
+                      <p className="mt-3 text-primary-slate dark:text-gray-200">
                         {feature.description}
                       </p>
                       

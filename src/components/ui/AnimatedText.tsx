@@ -49,21 +49,24 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   
   return (
     <motion.div
-      className={`overflow-hidden ${className}`}
+      className={className}
       variants={container}
       initial="hidden"
       animate="visible"
     >
       {words.map((word, index) => (
-        <motion.span
-          variants={child}
-          key={index}
-          className={`inline-block mr-1 ${
-            highlight ? 'text-gradient-primary' : ''
-          }`}
-        >
-          {word}
-        </motion.span>
+        <React.Fragment key={index}>
+          <motion.span
+            variants={child}
+            className={`inline-block ${
+              highlight ? 'text-gradient-primary' : ''
+            }`}
+          >
+            {word}
+          </motion.span>
+          {/* Add space between spans, except after the last word */}
+          {index < words.length - 1 ? ' ' : ''}
+        </React.Fragment>
       ))}
     </motion.div>
   );

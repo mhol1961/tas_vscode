@@ -52,14 +52,14 @@ export default function Navbar() {
                 {item.submenu ? (
                   <button
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
+                    className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
                   >
                     {item.name}
                   </button>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-white/90 px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
+                    className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
                   >
                     {item.name}
                   </Link>
@@ -70,14 +70,14 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute z-10 -ml-4 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-card ring-1 ring-black ring-opacity-5"
+                    className="absolute z-10 -ml-4 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-primary-slate ring-1 ring-black ring-opacity-5"
                   >
                     <div className="py-1">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-primary-navy/50"
+                          className="block px-4 py-2 text-sm text-primary-navy dark:text-gray-200 hover:bg-primary-blue/10 dark:hover:bg-primary-slate/60"
                         >
                           {subItem.name}
                         </Link>
@@ -127,7 +127,7 @@ export default function Navbar() {
                     <>
                       <button
                         onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                        className="w-full text-left text-primary-navy dark:text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
+                        className="w-full text-left text-primary-navy dark:text-gray-200 hover:text-primary-blue block px-3 py-2 text-base font-medium"
                       >
                         {item.name}
                       </button>
@@ -142,7 +142,7 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="text-primary-slate dark:text-gray-300 hover:text-primary-blue block px-3 py-2 text-sm"
+                              className="text-primary-navy dark:text-gray-200 hover:text-primary-blue block px-3 py-2 text-sm"
                             >
                               {subItem.name}
                             </Link>
@@ -153,7 +153,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-primary-navy dark:text-white hover:text-primary-blue block px-3 py-2 text-base font-medium"
+                      className="text-primary-navy dark:text-gray-200 hover:text-primary-blue block px-3 py-2 text-base font-medium"
                     >
                       {item.name}
                     </Link>

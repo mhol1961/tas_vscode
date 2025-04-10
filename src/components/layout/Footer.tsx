@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Company Info */}
         <motion.div className="space-y-4" variants={itemVariants}>
           <h3 className="text-2xl font-bold text-gradient-primary inline-block">TAS Solutions</h3>
-          <p className="text-sm text-gray-300 dark:text-gray-200 leading-relaxed">
+          <p className="text-sm text-gray-300 leading-relaxed">
             Empowering businesses with innovative CRM solutions and cutting-edge marketing automation technologies.
           </p>
           <div className="pt-2">
@@ -140,7 +140,7 @@ const Footer = () => {
         {/* Newsletter */}
         <motion.div className="space-y-4" variants={itemVariants}>
           <h3 className="text-xl font-bold text-primary-blue">Stay Updated</h3>
-          <p className="text-sm text-gray-300 dark:text-gray-200">
+          <p className="text-sm text-gray-300">
             Subscribe to our newsletter for the latest updates and insights.
           </p>
           <form className="space-y-2">
@@ -148,7 +148,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="w-full px-4 py-2 rounded-md bg-primary-slate/50 border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-400"
+                className="w-full px-4 py-2 rounded-md bg-primary-slate border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-500"
                 required
               />
             </div>
@@ -165,7 +165,7 @@ const Footer = () => {
       </motion.div>
 
       {/* Copyright */}
-      <div className="bg-primary-slate dark:bg-primary-navy/80 py-4 relative z-10">
+      <div className="bg-primary-slate py-4 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <motion.p 
             initial={{ opacity: 0 }}
