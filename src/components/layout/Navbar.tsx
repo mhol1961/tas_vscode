@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 py-2">
               <Image
-                src="/images/TAS_logo.png"
+                src="/images/TAS_LOGO3.png"
                 alt="TAS Logo"
                 width={140}
                 height={60}

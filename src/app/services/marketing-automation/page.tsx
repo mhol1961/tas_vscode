@@ -93,7 +93,7 @@ export default function MarketingAutomationPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-center"
+            className="text-4xl md:text-5xl font-bold mb-6 text-center dark:text-blue-800"
           >
             Marketing Automation
           </motion.h1>

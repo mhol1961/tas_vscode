@@ -45,7 +45,7 @@ const HeroRotator: React.FC = () => {
   const slide = heroSlides[current];
 
   return (
-    <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-primary-slate">
+    <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-primary-slate mt-[-80px] pt-[80px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 

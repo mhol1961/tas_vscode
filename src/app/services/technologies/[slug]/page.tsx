@@ -46,7 +46,7 @@ const TechnologyDetailPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8 md:mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-navy dark:text-white mb-4">{technology.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-navy dark:text-blue-800 mb-4">{technology.title}</h1>
              {/* Breadcrumbs - Simple Version */}
              <div className="text-sm text-gray-500 dark:text-gray-400">
               <Link href="/" className="hover:text-blue-600">Home</Link> / 

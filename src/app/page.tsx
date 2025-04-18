@@ -173,9 +173,10 @@ export default function Home() {
                           delay={0.1 + index * 0.1} 
                           variant={variant}
                           size="lg"
+                          className={index === 1 ? "dark:text-white dark:border-sky-400 dark:border-2 dark:bg-white/10" : "dark:text-white"}
                         />
                       </div>
-                      <h3 className="mt-4 text-xl font-semibold text-primary-navy group-hover:text-primary-blue transition-colors duration-300 text-center">
+                      <h3 className="mt-4 text-xl font-semibold text-primary-navy dark:text-blue-300 group-hover:text-primary-blue transition-colors duration-300 text-center">
                         {feature.title}
                       </h3>
                       <p className="mt-3 text-primary-slate dark:text-primary-light/80">
@@ -356,11 +357,11 @@ export default function Home() {
             </motion.p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <AnimatedButton className="bg-white text-primary-navy hover:bg-primary-light border-none">
+              <AnimatedButton className="bg-primary-blue text-white hover:bg-primary-blue/90 border-none shadow-md">
                 Schedule a Demo
               </AnimatedButton>
               
-              <AnimatedButton className="bg-transparent border-2 border-white text-primary-navy bg-white hover:bg-white/90">
+              <AnimatedButton className="bg-primary-navy text-white hover:bg-primary-navy/90 border-2 border-primary-blue shadow-md">
                 View Case Studies
               </AnimatedButton>
             </div>

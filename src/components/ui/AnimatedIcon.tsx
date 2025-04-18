@@ -34,7 +34,7 @@ const AnimatedIcon: React.FC<AnimatedIconProps> = ({
     primary: 'bg-primary-blue text-white shadow-lg',
     secondary: 'bg-primary-navy text-white shadow-lg',
     gradient: 'bg-gradient-primary text-white shadow-lg',
-    outline: 'bg-white dark:bg-primary-slate/20 text-primary-blue dark:text-primary-blue border-2 border-primary-blue/30 shadow-md'
+    outline: 'bg-white dark:bg-primary-slate/40 text-primary-blue dark:text-primary-blue border-2 border-primary-blue/50 dark:border-primary-blue/70 shadow-md'
   }[variant];
   
   return (
