@@ -88,70 +88,93 @@ const CircularServices: React.FC = () => {
   const itemBaseClasses = "w-40 sm:w-48 md:w-56 text-center z-20 absolute"; // Added absolute here
 
   return (
-    // Reduced top/bottom padding
-    <section className="pt-24 pb-16 sm:pt-28 sm:pb-20 px-4 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto flex justify-center items-center">
-        {/* Container needs relative positioning and defined size */}
-        <div 
-          ref={containerRef} 
-          // Removed fixed w/h, using padding and aspect ratio to define space
-          // Reduced internal padding, maintain bottom margin
-          className={`relative w-full aspect-square max-w-[680px] p-8 sm:p-10 flex items-center justify-center mb-16 sm:mb-20`}
-        >
-          {/* Central Circle Image - Use JS variable for size */}
-          <motion.div
-            className={`absolute rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-700`}
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            // Center the image absolutely & nudge up slightly
-            style={{ 
-              width: `${circleSize}px`, 
-              height: `${circleSize}px`,
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -94%)' // Final nudge up (~20px)
-            }}
-          >
-            <Image
-              src={centerImageSrc}
-              alt="Collaborative team working on laptop"
-              fill
-              className="object-cover z-0"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
-          </motion.div>
-
-          {/* Surrounding Service Text Blocks */}
-          {itemPositions.length > 0 &&
-            services.map((service, index) => (
-              <motion.div
-                key={service.heading}
-                className="absolute text-center"
-                // Added y: 50 for slide-up effect
-                initial={{ opacity: 0, scale: 0.8, y: 50 }} 
-                whileInView={{ opacity: 1, scale: 1, y: 0 }} 
-                viewport={{ once: true, amount: 0.3 }} 
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                style={{
-                  width: `${itemWidth}px`,
-                  left: itemPositions[index] ? `${itemPositions[index].x}px` : '50%',
-                  top: itemPositions[index] ? `${itemPositions[index].y}px` : '50%',
-                  transform: 'translate(-50%, -50%)',
-                }} 
-              >
-                {/* Text Block Content */}
-                <h4 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1">
-                  {service.heading}
-                </h4>
-                <p className="text-xs sm:text-sm text-primary-slate dark:text-gray-300">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
+    // Explicitly setting original top/bottom padding
+    <section className="pt-24 pb-24 sm:pt-28 sm:pb-28 px-4 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"> 
+      {/* Two Column Layout Container */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:space-x-12">
+        
+        {/* Left Column: Heading & Paragraph */}
+        <div className="md:w-1/3 text-center md:text-left mb-12 md:mb-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-navy dark:text-white mb-4">
+            Unlock Your Business's Full{' '}
+            <span className="text-primary-blue">Potential</span>
+          </h2>
+          <p className="text-base md:text-lg text-primary-slate dark:text-gray-300">
+            Leverage our expertise in CRM implementation, marketing automation, and AI-driven analytics to streamline your operations and accelerate growth. We tailor solutions to your unique needs.
+          </p>
         </div>
+
+        {/* Right Column: Circular Graphic */}
+        <div className="md:w-2/3 flex justify-center items-center"> 
+          {/* Container needs relative positioning and defined size */}
+          <div 
+            ref={containerRef} 
+            // Removed fixed w/h, using padding and aspect ratio to define space
+            // Reduced internal padding, maintain bottom margin
+            className={`relative w-full aspect-square max-w-[680px] p-8 sm:p-10 flex items-center justify-center`} /* Removed mb-16 sm:mb-20 here as parent handles spacing */
+          >
+            {/* Central Circle Image - Use JS variable for size */}
+            <motion.div 
+              className={`absolute rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-700`}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              // Center the image absolutely & nudge up slightly
+              style={{ 
+                width: `${circleSize}px`, 
+                height: `${circleSize}px`,
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -94%)' // Final nudge up (~20px)
+              }}
+            >
+              <Image
+                src={centerImageSrc}
+                alt="Collaborative team working on laptop"
+                fill
+                className="object-cover z-0"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
+            </motion.div>
+
+            {/* Central Text Block - Paragraph Removed */}
+            <div className="absolute inset-0 flex items-center justify-center text-center p-6 md:p-10">
+              <div className='max-w-xl'>
+              </div>
+            </div>
+
+            {/* Surrounding Service Text Blocks */}
+            {itemPositions.length > 0 &&
+              services.map((service, index) => (
+                <motion.div
+                  key={service.heading}
+                  className="absolute text-center"
+                  // Added y: 50 for slide-up effect
+                  initial={{ opacity: 0, scale: 0.8, y: 50 }} 
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }} 
+                  viewport={{ once: true, amount: 0.3 }} 
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  style={{
+                    width: `${itemWidth}px`,
+                    left: itemPositions[index] ? `${itemPositions[index].x}px` : '50%',
+                    top: itemPositions[index] ? `${itemPositions[index].y}px` : '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }} 
+                >
+                  {/* Text Block Content */}
+                  <h4 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1">
+                    {service.heading}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-primary-slate dark:text-gray-300">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

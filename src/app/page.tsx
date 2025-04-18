@@ -11,6 +11,7 @@ import VideoBackground from '@/components/ui/VideoBackground';
 import RotatingText from '@/components/ui/RotatingText';
 import { FaChartLine, FaUsers, FaCogs, FaRocket, FaLaptopCode, FaClipboardCheck } from 'react-icons/fa';
 import CircularServices from '@/components/sections/CircularServices';
+import HeroRotator from '@/components/ui/HeroRotator';
 
 // Function to get the appropriate image for each feature
 function getFeatureImage(index: number): string {
@@ -52,34 +53,24 @@ const testimonials = [
 
 const features = [
   {
-    title: 'CRM Solutions',
-    description: 'Streamline customer relationships with our powerful CRM integrations and customizations.',
+    title: 'CRM Systems',
+    description: 'Empowering organizations with tailored CRM solutions—including Microsoft Dynamics 365, Salesforce, and HubSpot—to solve unique business challenges and drive measurable growth.',
     icon: FaUsers,
   },
   {
     title: 'Marketing Automation',
-    description: 'Drive growth with intelligent marketing automation tools and strategies.',
+    description: 'Delivering expert automation solutions in Marketo, Dynamics 365 Customer Insights, ClickDimensions, and HubSpot, designed to align with your goals and maximize ROI.',
     icon: FaChartLine,
   },
   {
     title: 'Systems Integration',
-    description: 'Seamlessly connect your business systems for maximum efficiency.',
+    description: 'Creating seamless connections between CRM and marketing automation platforms through native and custom solutions to optimize workflows and enhance efficiency.',
     icon: FaCogs,
   },
   {
-    title: 'Growth Tools',
-    description: 'Accelerate your business growth with targeted marketing strategies.',
+    title: 'Strategy Consulting',
+    description: 'Providing expert guidance in CRM and marketing automation, with actionable insights and strategies that deliver measurable results and drive success.',
     icon: FaRocket,
-  },
-  {
-    title: 'Custom Solutions',
-    description: 'Tailored solutions to meet your specific business needs and goals.',
-    icon: FaLaptopCode,
-  },
-  {
-    title: 'Task Management',
-    description: 'Stay organized with our intuitive task management system.',
-    icon: FaClipboardCheck,
   },
 ];
 
@@ -88,134 +79,51 @@ export default function Home() {
     <PageLayout>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light dark:from-primary-navy dark:via-primary-slate dark:to-primary-navy transition-colors duration-300">
-          {/* Video Background */}
-          <VideoBackground videoSrc="/videos/Animation_video.mp4" overlayOpacity={70} />
-          
-          {/* Background Pattern - on top of video for texture */}
-          <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] z-10"></div>
-          
-          {/* Gradient Orbs - Enhanced with animations */}
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow z-10"></div>
-          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-primary-blue to-primary-navy opacity-20 dark:opacity-30 rounded-full filter blur-3xl animate-pulse-slow z-10"></div>
-          
-          {/* Additional decorative elements */}
-          <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-primary-blue/30 rounded-full filter blur-xl animate-float z-10"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-16 h-16 bg-primary-blue/20 rounded-full filter blur-lg animate-float z-10" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-primary-blue/20 rounded-full filter blur-md animate-float z-10" style={{ animationDelay: '2s' }}></div>
-
-          <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36"> {/* Reduced Padding */}
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Hero Content - Enhanced with animated components */}
-              <div className="mb-2 inline-block">
-                <motion.span
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="px-4 py-1 bg-white/20 text-white font-semibold rounded-full text-sm inline-block"
+        <HeroRotator />
+        
+        {/* Main content section with darker blue-gray background */}
+        <div className="py-12 bg-slate-300 dark:bg-slate-800 border-t border-b border-slate-400 dark:border-slate-700">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <h1 className="text-3xl font-bold text-primary-navy dark:text-white mb-5">
+              Expert CRM & Marketing Automation Solutions
+            </h1>
+            
+            <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="text-lg leading-relaxed text-primary-navy dark:text-white/90 mb-6"
                 >
-                  Innovative CRM Solutions
-                </motion.span>
-              </div>
-              
-              <AnimatedText 
-                text="Transform Your Business with" 
-                className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-tight"
-              />
-              <AnimatedText 
-                text="TAS Solutions:" 
-                className="text-4xl font-bold tracking-tight text-sky-300 sm:text-5xl lg:text-6xl lg:leading-tight mt-2"
-                highlight={false}
-              />
-              <div className="mt-2">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-4"> {/* Set to white always */}
-                  Expert CRM & Marketing Automation Solutions
-                </h1>
-                <p className="text-lg leading-relaxed text-white/90">
-                  We empower mid-to-large enterprises to streamline operations, enhance customer engagement, and drive measurable growth through tailored technology strategies.
-                </p>
-              </div>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-2 text-lg leading-relaxed text-white/90"
-              >
-                Empowering enterprises with cutting-edge CRM solutions and marketing automation.
-                Drive growth, enhance efficiency, and deliver exceptional customer experiences.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="mt-16 flex flex-wrap gap-4"
-              >
-                <AnimatedButton primary={true}>
-                  Request a Consultation
-                </AnimatedButton>
-                <AnimatedButton primary={false}>
-                  Learn More
-                </AnimatedButton>
-              </motion.div>
-              
-              {/* Trust indicators */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700"
-              >
-                <p className="text-sm text-white/70 mb-3">Trusted by leading companies worldwide</p>
-                <div className="flex flex-wrap items-center gap-8">
-                  <div className="h-8 relative w-24">
-                    <Image 
-                      src="/images/photos/Salesforce_logo.png" 
-                      alt="Salesforce" 
-                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      fill
-                    />
-                  </div>
-                  <div className="h-8 relative w-24">
-                    <Image 
-                      src="/images/photos/Microsoft_dynamics_logo.png" 
-                      alt="Microsoft Dynamics" 
-                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      fill
-                    />
-                  </div>
-                  <div className="h-7 relative w-20">
-                    <Image 
-                      src="/images/photos/Hubspot_logo.png" 
-                      alt="HubSpot" 
-                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      fill
-                    />
-                  </div>
-                  <div className="h-8 relative w-24">
-                    <Image 
-                      src="/images/photos/Adobe_marketo_engage.png" 
-                      alt="Adobe Marketo Engage" 
-                      className="object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      fill
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                  We empower mid-to-large enterprises to streamline operations and enhance customer engagement through cutting-edge CRM solutions and marketing automation. Our tailored technology strategies drive measurable growth, improve efficiency, and deliver exceptional customer experiences.
+            </motion.p>
+                
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-6 flex flex-wrap justify-center gap-4"
+            >
+              <AnimatedButton className="bg-primary-blue text-white hover:bg-primary-blue/90 border-none shadow-md">
+                Request a Consultation
+              </AnimatedButton>
+              <AnimatedButton className="bg-white border-2 border-primary-blue text-primary-navy hover:bg-primary-light shadow-md">
+                Learn More
+              </AnimatedButton>
+            </motion.div>
           </div>
-        </section>
+        </div>
 
         {/* Circular Services Section */}
-        <CircularServices />
+        <div className="bg-white dark:bg-primary-slate transition-colors duration-300">
+          <CircularServices />
+        </div>
 
         {/* Features Section */}
-        <AnimatedSection className="py-16 lg:py-24 bg-white dark:bg-primary-slate transition-colors duration-300 relative overflow-hidden"> {/* Reduced Padding */}
+        <AnimatedSection className="py-16 lg:py-24 bg-primary-slate text-primary-light transition-colors duration-300 relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] pointer-events-none"></div>
-          <div className="absolute -top-40 right-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 rounded-full filter blur-3xl"></div>
-          <div className="absolute -bottom-40 left-20 w-[400px] h-[400px] bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute -top-40 right-20 w-[400px] h-[400px] bg-primary-blue/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute -bottom-40 left-20 w-[400px] h-[400px] bg-primary-blue/10 rounded-full filter blur-3xl"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-24">
@@ -224,14 +132,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-base text-primary-blue dark:text-gray-100 font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 dark:bg-primary-blue/30 rounded-full"
+                className="text-base text-primary-blue font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 rounded-full"
               >
-                Solutions
+                Our Services
               </motion.h2>
-              
               <AnimatedText 
-                text="Powerful Features" 
-                className="text-3xl font-bold text-primary-navy dark:text-primary-blue sm:text-4xl"
+                text="Expert Solutions, Proven Results" 
+                className="text-3xl font-bold text-primary-light sm:text-4xl"
                 highlight={false}
               />
               <motion.p
@@ -239,18 +146,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="mt-4 text-lg text-primary-slate dark:text-gray-300"
+                className="mt-4 text-lg text-primary-gray"
               >
-                Everything you need to streamline your business operations and drive growth.
+                Leading organizations rely on TAS for technology-driven transformation, operational excellence, and measurable business value.
               </motion.p>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
               {features.map((feature, index) => {
-                // Alternate icon variants for visual interest
                 const variants = ['primary', 'secondary', 'gradient', 'outline'];
                 const variant = variants[index % variants.length] as 'primary' | 'secondary' | 'gradient' | 'outline';
-                
                 return (
                   <motion.div
                     key={feature.title}
@@ -258,31 +162,25 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-                    className="group bg-gray-50 dark:bg-primary-navy/50 p-8 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:border-primary-blue/20 dark:hover:border-primary-blue/30 transition-all duration-300 relative overflow-hidden"
+                    whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(35, 41, 70, 0.08), 0 10px 10px -5px rgba(35, 41, 70, 0.04)' }}
+                    className="group bg-primary-light dark:bg-primary-navy/50 p-8 rounded-xl shadow-md border border-primary-gray hover:border-primary-blue/40 transition-all duration-300 relative overflow-hidden"
                   >
-                    {/* Background gradient that appears on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-primary-navy/5 dark:from-primary-blue/10 dark:to-primary-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-primary-aqua/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative z-10">
-                      {/* Icon moved to top of card content */}
                       <div className="mb-6 flex justify-center">
                         <AnimatedIcon 
                           icon={feature.icon} 
                           delay={0.1 + index * 0.1} 
                           variant={variant}
-                          size="lg" // Make icon larger as primary visual
+                          size="lg"
                         />
                       </div>
-                      
-                      <h3 className="mt-4 text-xl font-semibold text-primary-navy dark:text-white group-hover:text-primary-blue dark:group-hover:text-primary-blue transition-colors duration-300 text-center">
+                      <h3 className="mt-4 text-xl font-semibold text-primary-navy group-hover:text-primary-blue transition-colors duration-300 text-center">
                         {feature.title}
                       </h3>
-                      
-                      <p className="mt-3 text-primary-slate dark:text-gray-200">
+                      <p className="mt-3 text-primary-slate dark:text-primary-light/80">
                         {feature.description}
                       </p>
-                      
                       <motion.a
                         whileHover={{ x: 5 }}
                         className="mt-5 inline-flex items-center text-primary-blue font-medium group-hover:underline cursor-pointer"
@@ -299,9 +197,41 @@ export default function Home() {
             </div>
           </div>
         </AnimatedSection>
+
+        {/* Differentiators Section */}
+        <section className="py-16 bg-primary-light dark:bg-primary-slate border-t border-primary-gray">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-primary-navy dark:text-primary-light mb-4">Why Choose TAS?</h2>
+              <p className="text-lg text-primary-slate dark:text-primary-light/80 max-w-2xl mx-auto">We deliver measurable results through deep expertise, innovative solutions, and a relentless focus on your business objectives.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+              <div className="flex flex-col items-center text-center">
+                <span className="text-4xl text-primary-blue mb-4"><FaChartLine /></span>
+                <h3 className="font-semibold text-primary-navy dark:text-primary-light mb-2">Proven Expertise</h3>
+                <p className="text-primary-slate dark:text-primary-light/80">Years of experience across leading CRM and marketing platforms.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <span className="text-4xl text-primary-blue mb-4"><FaCogs /></span>
+                <h3 className="font-semibold text-primary-navy dark:text-primary-light mb-2">Tailored Solutions</h3>
+                <p className="text-primary-slate dark:text-primary-light/80">Custom strategies aligned to your unique business needs and goals.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <span className="text-4xl text-primary-blue mb-4"><FaRocket /></span>
+                <h3 className="font-semibold text-primary-navy dark:text-primary-light mb-2">Measurable ROI</h3>
+                <p className="text-primary-slate dark:text-primary-light/80">Every engagement is focused on delivering quantifiable business value.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <span className="text-4xl text-primary-blue mb-4"><FaUsers /></span>
+                <h3 className="font-semibold text-primary-navy dark:text-primary-light mb-2">Trusted Partnership</h3>
+                <p className="text-primary-slate dark:text-primary-light/80">We work as an extension of your team for lasting success.</p>
+              </div>
+            </div>
+          </div>
+        </section>
         
         {/* Testimonials Section */}
-        <AnimatedSection className="py-24 bg-gradient-primary text-white relative overflow-hidden">
+        <AnimatedSection className="py-24 bg-white dark:bg-primary-slate text-primary-navy dark:text-white relative overflow-hidden">
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -372,7 +302,7 @@ export default function Home() {
         </AnimatedSection>
 
         {/* CTA Section */}
-        <AnimatedSection className="py-24 bg-gradient-primary text-white relative overflow-hidden">
+        <AnimatedSection className="py-24 bg-white dark:bg-primary-slate text-primary-navy dark:text-white relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none"></div>
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 -translate-x-20"></div>
@@ -412,7 +342,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <AnimatedText 
               text="Ready to Transform Your Business?" 
-              className="text-4xl font-extrabold mb-6 text-white"
+              className="text-4xl font-extrabold mb-6 text-primary-navy dark:text-white"
             />
             
             <motion.p
@@ -420,23 +350,17 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-xl max-w-2xl mx-auto mb-10 text-white/90"
+              className="text-xl max-w-2xl mx-auto mb-10 text-primary-slate dark:text-white/90"
             >
               Join hundreds of businesses that have already improved their operations with TAS Solutions.
             </motion.p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <AnimatedButton 
-                primary={false} 
-                className="bg-white text-primary-navy hover:bg-primary-light border-none"
-              >
+              <AnimatedButton className="bg-white text-primary-navy hover:bg-primary-light border-none">
                 Schedule a Demo
               </AnimatedButton>
               
-              <AnimatedButton 
-                primary={false} 
-                className="bg-transparent border-2 border-white text-primary-navy bg-white hover:bg-white/90"
-              >
+              <AnimatedButton className="bg-transparent border-2 border-white text-primary-navy bg-white hover:bg-white/90">
                 View Case Studies
               </AnimatedButton>
             </div>
@@ -454,10 +378,10 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + (index * 0.2) }}
                   viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-primary-navy dark:text-white"
                 >
                   <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-primary-slate dark:text-white/80">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

@@ -1,30 +1,31 @@
-import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google'; // Import Inter font
 import './globals.css';
+import Navbar from '@/components/layout/Navbar'; // Corrected import
+import Footer from '@/components/layout/Footer';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
+// Configure the Inter font
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Technology Alliance Solutions Inc. | CRM & Marketing Automation Experts",
-  description: "Your trusted partner for CRM solutions and marketing automation. We help businesses streamline operations and drive growth through innovative technology solutions.",
-  keywords: "CRM, Marketing Automation, Technology Solutions, Business Consulting, Digital Transformation",
+  title: 'TAS - Technology Advisory Services',
+  description: 'Expert advice on CRM, Marketing Automation, and Technology Integration.',
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
-      <head>
-        {/* No scripts here to avoid hydration mismatches */}
-      </head>
-      <body className="font-sans bg-white dark:bg-primary-navy text-primary-navy dark:text-white transition-colors duration-300">
-        {children}
+    <html lang="en">
+      {/* Apply the Inter font class and other base styles to the body */}
+      <body className={`${inter.className} bg-background text-foreground flex flex-col min-h-screen`}>
+        <Navbar /> {/* Corrected usage */}
+        <main className="flex-grow container mx-auto px-4 py-8">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

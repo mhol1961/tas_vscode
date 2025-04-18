@@ -10,11 +10,13 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          navy: '#2C3E50',     // Navy from PRD
-          blue: '#3498DB',     // Electric Blue from PRD
-          slate: '#34495E',    // Slate Gray from PRD
-          light: '#EDF2F7',    // Light background
-          white: '#FFFFFF',    // White
+          slate: '#232946',      // Deep Slate (primary background)
+          blue: '#3584E4',       // Sky Blue (accents, buttons)
+          light: '#F9FAFB',      // Soft White (background, cards)
+          navy: '#222222',       // Charcoal (headings, main text)
+          gray: '#E6E8EC',       // Light Gray (borders, backgrounds)
+          aqua: '#56CFE1',       // Accent Aqua (icons, secondary accents)
+          white: '#FFFFFF',      // White (fallback)
         },
         dark: {
           bg: '#1a202c',

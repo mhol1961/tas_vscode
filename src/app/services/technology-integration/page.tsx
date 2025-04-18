@@ -8,7 +8,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { FaNetworkWired, FaExchangeAlt, FaCloud, FaLock, FaCode, FaDatabase, FaCheckCircle } from 'react-icons/fa';
 
-export default function SystemsIntegrationPage() {
+export default function TechnologyIntegrationPage() {
   const integrationTypes = [
     {
       title: 'API Integration',

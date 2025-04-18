@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import FinalDarkModeToggle from '../FinalDarkModeToggle';
+import AnimatedButton from '../ui/AnimatedButton';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -31,7 +32,9 @@ export default function Navbar() {
       {/* Restore original gradient div */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary-light/30 to-primary-blue/10 dark:from-primary-navy dark:to-primary-blue/30"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        {/* Main container: Use justify-between to push left and right groups apart */}
+        <div className="flex justify-between items-center h-20">
+          {/* Left Group: Logo Only */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 py-2">
               <Image
@@ -45,53 +48,61 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative group">
-                {item.submenu ? (
-                  <button
-                    onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
-                  >
-                    {item.name}
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
-                  >
-                    {item.name}
-                  </Link>
-                )}
+          {/* Right Group: Nav Links, Dark Mode Toggle, and CTA Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Desktop Menu Links */}
+            <div className="flex items-center space-x-1">
+              {navigation.map((item) => (
+                <div key={item.name} className="relative group">
+                  {item.submenu ? (
+                    <button
+                      onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                      className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
+                    >
+                      {item.name}
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-primary-navy dark:text-gray-200 hover:text-primary-blue dark:hover:text-white px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 dark:hover:bg-white/10 hover:scale-105"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
 
-                {item.submenu && activeDropdown === item.name && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute z-10 -ml-4 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-primary-slate ring-1 ring-black ring-opacity-5"
-                  >
-                    <div className="py-1">
-                      {item.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="block px-4 py-2 text-sm text-primary-navy dark:text-gray-200 hover:bg-primary-blue/10 dark:hover:bg-primary-slate/60"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </div>
-            ))}
-            
-            {/* Final Dark Mode Toggle */}
-            <div className="ml-4">
-              <FinalDarkModeToggle />
+                  {item.submenu && activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute z-10 -ml-4 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-primary-slate ring-1 ring-black ring-opacity-5"
+                    >
+                      <div className="py-1">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 text-sm text-primary-navy dark:text-gray-200 hover:bg-primary-blue/10 dark:hover:bg-primary-slate/60"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
             </div>
+            <FinalDarkModeToggle />
+            {/* Styled CTA Button */}
+            {/* Wrap AnimatedButton in Link for navigation */}
+            <Link href="/contact" passHref>
+              <AnimatedButton 
+                className="bg-orange-600 hover:bg-orange-700 text-white border-transparent"
+              >
+                Book a Call
+              </AnimatedButton>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -160,6 +171,17 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+              {/* CTA Button for Mobile Menu */}
+              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                {/* Wrap AnimatedButton in Link for navigation */}
+                <Link href="/contact" passHref>
+                  <AnimatedButton 
+                    className="w-full justify-center bg-orange-600 hover:bg-orange-700 text-white border-transparent"
+                  >
+                    Book a Call
+                  </AnimatedButton>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
