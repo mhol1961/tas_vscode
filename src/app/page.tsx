@@ -499,7 +499,7 @@ export default function Home() {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/photos/Two_People_looking_at_screen.png"
+              src="/images/photos/Two_People_looking_at_screen1.png"
               alt="Technology Collaboration"
               fill
               className="object-cover object-center opacity-10"

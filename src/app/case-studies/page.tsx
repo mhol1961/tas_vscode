@@ -24,7 +24,7 @@ const caseStudies = [
       'Streamlined cross-departmental workflows',
       'Reduced lead response time by 68%'
     ],
-    image: '/images/photos/Two_People_looking_at_screen.png?v=2', // Added cache buster
+    image: '/images/photos/Two_People_looking_at_screen1.png', // Using existing image
     icon: FaBuilding,
     bgColor: 'bg-blue-100 dark:bg-blue-900/30',
     iconColor: 'text-blue-600 dark:text-blue-400'
