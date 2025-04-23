@@ -122,7 +122,7 @@ const services = [
       'Review Generation Campaigns',
       'Reputation Recovery Strategies'
     ],
-    image: '/images/photos/Two_people_looking_at_screen.png',
+    image: '/images/photos/WhyChooseUs.png',
     color: 'from-yellow-500 to-amber-600',
     link: '/services/reputation-management'
   },
@@ -359,7 +359,7 @@ export default function ServicesPage() {
                 <div className="bg-white dark:bg-primary-slate/50 rounded-xl shadow-xl overflow-hidden">
                   <div className="relative h-80">
                     <Image 
-                      src="/images/photos/Two_people_looking_at_screen.png"
+                      src="/images/photos/WhyChooseUs.png"
                       alt="Technology Alliance Solutions Services"
                       fill
                       className="object-cover object-center"
@@ -373,8 +373,8 @@ export default function ServicesPage() {
                 <h3 className="text-2xl font-bold text-primary-navy dark:text-white mb-6">
                   Full-Service Digital Solutions
                 </h3>
-                <p className="text-primary-slate dark:text-white/80 mb-8">
-                  At Technology Alliance Solutions, we understand that modern businesses need integrated solutions. That's why we offer a complete range of services that work together seamlessly to maximize your marketing efforts and drive tangible results.
+                  <p className="text-primary-slate dark:text-white/80 mb-8">
+                  At Technology Alliance Solutions, we understand that modern businesses need integrated solutions. That&apos;s why we offer a complete range of services that work together seamlessly to maximize your marketing efforts and drive tangible results.
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -530,7 +530,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               className="text-xl text-white/90 mb-10 max-w-3xl mx-auto"
             >
-              Join hundreds of businesses that have transformed their operations with our AI-powered solutions. Schedule a call today and let's discuss how we can help you grow.
+              Join hundreds of businesses that have transformed their operations with our AI-powered solutions. Schedule a call today and let&apos;s discuss how we can help you grow.
             </motion.p>
             
             <div className="flex flex-wrap justify-center gap-4">
