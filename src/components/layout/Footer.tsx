@@ -116,36 +116,18 @@ const Footer = () => {
         <motion.div className="space-y-4" variants={itemVariants}>
           <h3 className="text-xl font-bold text-primary-blue">Our Services</h3>
           <ul className="space-y-2">
-            <li>
-              <Link href="/services/crm" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                CRM Implementation
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/technology-integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Technology Integration
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/marketing-automation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Marketing Automation
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Custom Solutions
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/technologies/compare" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                System Optimization
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/technologies" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Technology Consulting
-              </Link>
-            </li>
+            <li><Link href="/services/seo-services" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">SEO Services</Link></li>
+            <li><Link href="/services/website-creation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Website Creation</Link></li>
+            <li><Link href="/services/email-marketing" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Email Marketing</Link></li>
+            <li><Link href="/services/lead-generation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Lead Generation</Link></li>
+            <li><Link href="/services/crm" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">CRM & Automation</Link></li>
+            <li><Link href="/services/reputation-management" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Reputation Management</Link></li>
+            <li><Link href="/services/social-media-management" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Social Media Management</Link></li>
+            <li><Link href="/services/technology-integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Technology Integration</Link></li>
+            <li><Link href="/services/marketing-automation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Marketing Automation</Link></li>
+            <li><Link href="/services/custom-solutions" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Custom Solutions</Link></li>
+            <li><Link href="/services/system-optimization" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">System Optimization</Link></li>
+            <li><Link href="/services/technologies" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">Technology Consulting</Link></li>
           </ul>
         </motion.div>
 
