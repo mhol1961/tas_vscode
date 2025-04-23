@@ -9,15 +9,15 @@ git add .
 echo 2. Committing changes...
 git commit -m "Update website content and functionality"
 
-echo 3. Switching to main branch...
-git checkout main
+echo 3. Switching to master branch...
+git checkout master
 
 echo 4. Merging changes from dev branch...
 git merge dev
 
 echo 5. Pushing both branches to GitHub...
 git push origin dev
-git push origin main
+git push origin master
 
 echo ============================================
 echo Done! Your changes should now be deployed by Vercel.
