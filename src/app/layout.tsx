@@ -17,7 +17,13 @@ export const metadata: Metadata = {
     `${siteMetadata.siteUrl}${siteMetadata.logo}`,
     '/'
   ),
-  keywords: 'CRM implementation, technology integration, marketing automation, tech consulting, system optimization, enterprise solutions, business automation'
+  keywords: 'CRM implementation, technology integration, marketing automation, tech consulting, system optimization, enterprise solutions, business automation',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  }
 };
 
 export default function RootLayout({
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Apply the Inter font class and other base styles to the body */}
-      <body className={`${inter.className} bg-background text-foreground flex flex-col min-h-screen`}>
+      <body className={`${inter.className} bg-background text-foreground flex flex-col min-h-screen overflow-x-hidden`}>
         {/* Schema.org JSON-LD structured data */}
         <Script
           id="schema-org-organization"
@@ -56,7 +62,7 @@ export default function RootLayout({
           })}
         />
         <Navbar />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           {children}
         </main>
         <Footer />

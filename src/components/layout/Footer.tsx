@@ -29,7 +29,7 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
+        className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-8 relative z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -53,12 +53,12 @@ const Footer = () => {
               <span>(404) 205-8405</span>
             </div>
           </div>
-          <div className="flex space-x-4 pt-2">
+          <div className="flex flex-wrap gap-4 pt-2">
             <motion.a
               href="https://linkedin.com/company/technology-alliance-solutions"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-blue hover:text-white transition-colors"
+              className="text-primary-blue hover:text-white transition-colors touch-manipulation"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               aria-label="LinkedIn"
@@ -69,7 +69,7 @@ const Footer = () => {
               href="https://twitter.com/tech_alliance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-blue hover:text-white transition-colors"
+              className="text-primary-blue hover:text-white transition-colors touch-manipulation"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Twitter"
@@ -168,11 +168,11 @@ const Footer = () => {
 
         {/* Newsletter */}
         <motion.div className="space-y-4" variants={itemVariants}>
-          <h3 className="text-xl font-bold text-primary-blue">Subscribe to Updates</h3>
-          <p className="text-sm text-gray-300">
+          <h3 className="text-xl font-bold text-primary-blue mt-2 sm:mt-0">Subscribe to Updates</h3>
+          <p className="text-sm text-gray-300 mt-2">
             Stay informed about our latest AI tools, marketing strategies, and industry insights.
           </p>
-          <form className="space-y-4">
+          <form className="space-y-4 mt-4">
             <div className="space-y-2">
               <label htmlFor="subscribe-email" className="text-sm font-medium text-white mb-1 block">
                 Email Address:
@@ -188,7 +188,8 @@ const Footer = () => {
                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400
                   text-white placeholder-gray-400
                   shadow-md dark:shadow-lg dark:shadow-blue-500/20
-                  transition-all duration-200"
+                  transition-all duration-200
+                  text-base"
                   required
                 />
                 {/* Subtle highlight effect */}
@@ -203,7 +204,8 @@ const Footer = () => {
             <motion.button
               type="submit"
               className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 px-4 rounded-md 
-              transition-all duration-200 shadow-md hover:shadow-lg border border-green-500/30"
+              transition-all duration-200 shadow-md hover:shadow-lg border border-green-500/30
+              touch-manipulation text-base"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -214,8 +216,8 @@ const Footer = () => {
       </motion.div>
 
       {/* Copyright */}
-      <div className="bg-primary-slate py-4 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
+      <div className="bg-primary-slate py-5 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-300">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -225,7 +227,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Technology Alliance Solutions, INC. All rights reserved.
           </motion.p>
           <motion.div
-            className="flex space-x-4 mt-2 md:mt-0"
+            className="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 mt-4 sm:mt-0"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.7 }}

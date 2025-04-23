@@ -87,7 +87,7 @@ export default function Home() {
     <PageLayout>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-screen overflow-hidden">
+        <section className="relative min-h-screen overflow-hidden">
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -134,25 +134,25 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 {/* Left column: Text content */}
                 <motion.div 
-                  className="text-white md:pr-8"
+                  className="text-white md:pr-8 pt-16 md:pt-0"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h5 className="text-blue-300 font-medium tracking-wider mb-3 uppercase text-sm inline-flex items-center">
+                  <h5 className="text-blue-300 font-medium tracking-wider mb-3 uppercase text-xs sm:text-sm inline-flex items-center">
                     <span className="w-5 h-[2px] bg-blue-400 mr-2"></span>
                     TECHNOLOGY ALLIANCE SOLUTIONS
                   </h5>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 font-heading">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 font-heading">
                     Transforming Business 
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-500 block mt-1">Through Technology</span>
                   </h1>
                   
-                  <p className="text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                  <p className="text-base sm:text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
                     Enterprise-grade CRM implementation, system integration, and marketing automation expertise to optimize your operations and accelerate growth.
                   </p>
 
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/services">
                       <AnimatedButton className="bg-blue-600 hover:bg-blue-700 text-white border-white border-2 shadow-lg">
                         Explore Solutions
@@ -166,9 +166,9 @@ export default function Home() {
                   </div>
                   
                   {/* Trust indicators */}
-                  <div className="mt-12 flex items-center">
-                    <span className="text-white/70 text-sm mr-4">Trusted by leading platforms:</span>
-                    <div className="flex items-center space-x-6">
+                  <div className="mt-8 sm:mt-12">
+                    <span className="text-white/70 text-sm block sm:inline mr-4 mb-2 sm:mb-0">Trusted by leading platforms:</span>
+                    <div className="flex items-center space-x-6 mt-3 sm:mt-0 sm:inline-flex">
                       <Image src="/images/photos/Microsoft_logo.png" alt="Microsoft" width={90} height={30} className="opacity-75 hover:opacity-100 transition-opacity h-7 w-auto object-contain" />
                       <Image src="/images/photos/Salesforce_logo.png" alt="Salesforce" width={90} height={30} className="opacity-75 hover:opacity-100 transition-opacity h-7 w-auto object-contain" />
                       <Image src="/images/photos/Hubspot_logo.png" alt="HubSpot" width={90} height={30} className="opacity-75 hover:opacity-100 transition-opacity h-7 w-auto object-contain" />
@@ -273,7 +273,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {features.slice(0, 6).map((feature, index) => {
                 const variants = ['primary', 'secondary', 'gradient', 'outline'];
                 const variant = variants[index % variants.length] as 'primary' | 'secondary' | 'gradient' | 'outline';
@@ -332,11 +332,11 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Technology Integration Section */}
-        <AnimatedSection className="py-20 bg-primary-slate text-white relative overflow-hidden">
+        <AnimatedSection className="py-16 md:py-20 bg-primary-slate text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -465,7 +465,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {businessServices.map((service, index) => (
                 <Link href={service.link} key={service.name}>
                   <motion.div
@@ -530,7 +530,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.name}
@@ -597,7 +597,7 @@ export default function Home() {
               Let our team of experts help you implement, integrate, and optimize your technology solutions for maximum business impact.
             </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
               <Link href="/contact">
                 <AnimatedButton className="bg-blue-600 text-white hover:bg-blue-700 border-none shadow-md">
                   Book a Consultation
@@ -612,7 +612,7 @@ export default function Home() {
             </div>
 
             {/* Stats section */}
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
               {[
                 { value: '200+', label: 'Clients Served' },
                 { value: '95%', label: 'Client Satisfaction' },
