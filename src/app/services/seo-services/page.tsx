@@ -308,8 +308,8 @@ export default function SeoServicesPage() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 order-2 md:order-1">
               <Image 
-                src="https://images.unsplash.com/photo-1503194775635-ada629e511bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Local SEO map view" 
+                src="/images/photos/SEO_Services.png" 
+                alt="Local SEO services" 
                 width={600} 
                 height={400} 
                 className="rounded-lg shadow-xl object-cover"
