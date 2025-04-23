@@ -103,8 +103,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary-navy dark:text-white mb-1">Our Office</h3>
                     <p className="text-primary-slate dark:text-gray-300">
-                      123 Tech Avenue, Suite 400<br />
-                      Boston, MA 02110<br />
+                      3355 Lenox Rd NE, Suite 1000<br />
+                      Atlanta, GA 30326<br />
                       United States
                     </p>
                   </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary-navy dark:text-white mb-1">Phone</h3>
                     <p className="text-primary-slate dark:text-gray-300">
-                      +1 (617) 555-0123
+                      (404) 205-8405
                     </p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary-navy dark:text-white mb-1">Email</h3>
                     <p className="text-primary-slate dark:text-gray-300">
-                      info@tascompany.com
+                      chris.johnson@technologyalliancesolutions.com
                     </p>
                   </div>
                 </div>
@@ -269,24 +269,22 @@ export default function ContactPage() {
       <AnimatedSection className="py-16 bg-slate-100 dark:bg-primary-navy">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-8 text-center text-primary-navy dark:text-white">Find Us</h2>
-          <div className="rounded-lg overflow-hidden shadow-lg h-[400px] relative">
-            {/* In a real implementation, you would use a proper map component like Google Maps or Mapbox */}
-            {/* For now, we'll use a placeholder image */}
-            <Image 
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
-              alt="Map location" 
-              fill 
-              className="object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white dark:bg-primary-slate p-4 rounded-lg shadow-lg">
-                <p className="text-primary-navy dark:text-white font-semibold">TAS Headquarters</p>
-                <p className="text-primary-slate dark:text-gray-300">123 Tech Avenue, Boston, MA</p>
-              </div>
-            </div>
+          <div className="rounded-lg overflow-hidden shadow-lg h-[400px]">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.0105250855303!2d-84.3630974!3d33.846638799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f505c1cc3d20ad%3A0xf06249b75421ec41!2s3355%20Lenox%20Rd%20NE%20%231000%2C%20Atlanta%2C%20GA%2030326!5e0!3m2!1sen!2sus!4v1714021283075!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Intelligrow Office Location"
+              className="w-full h-full"
+              aria-label="Map showing Intelligrow's office location in Atlanta"
+            ></iframe>
           </div>
           <p className="text-center mt-4 text-primary-slate dark:text-gray-300">
-            We're conveniently located in downtown Boston, easily accessible by public transportation.  
+            We&apos;re conveniently located in Buckhead, Atlanta, easily accessible from GA-400 and I-85.
           </p>
         </div>
       </AnimatedSection>
@@ -317,7 +315,7 @@ export default function ContactPage() {
             <div>
               <h3 className="text-xl font-semibold mb-2 text-primary-navy dark:text-white">How do I get started with your services?</h3>
               <p className="text-primary-slate dark:text-gray-300">
-                Simply fill out our contact form or give us a call. We'll schedule an initial consultation to understand your needs and discuss how we can help.  
+                Simply fill out our contact form or give us a call. We&apos;ll schedule an initial consultation to understand your needs and discuss how we can help.  
               </p>
             </div>
           </div>

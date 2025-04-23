@@ -154,21 +154,6 @@ const Footer = () => {
           <h3 className="text-xl font-bold text-primary-blue">Resources</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/resources" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Resource Center
-              </Link>
-            </li>
-            <li>
-              <Link href="/resources/document-creation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Document Creation
-              </Link>
-            </li>
-            <li>
-              <Link href="/affiliate-tools" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
-                Affiliate Tools
-              </Link>
-            </li>
-            <li>
               <Link href="/case-studies" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Case Studies
               </Link>
@@ -187,18 +172,38 @@ const Footer = () => {
           <p className="text-sm text-gray-300">
             Stay informed about our latest AI tools, marketing strategies, and industry insights.
           </p>
-          <form className="space-y-2">
-            <div>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-2 rounded-md bg-primary-slate border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-500"
-                required
-              />
+          <form className="space-y-4">
+            <div className="space-y-2">
+              <label htmlFor="subscribe-email" className="text-sm font-medium text-white mb-1 block">
+                Email Address:
+              </label>
+              <div className="relative group">
+                <input
+                  id="subscribe-email"
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full px-4 py-3 rounded-md 
+                  bg-slate-700/90 dark:bg-slate-700 
+                  border-2 border-blue-400/30 dark:border-blue-400/50 
+                  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400
+                  text-white placeholder-gray-400
+                  shadow-md dark:shadow-lg dark:shadow-blue-500/20
+                  transition-all duration-200"
+                  required
+                />
+                {/* Subtle highlight effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-400/10 dark:from-blue-500/10 dark:to-blue-400/20 
+                rounded-md pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              {/* Helper text */}
+              <p className="text-xs text-gray-400 dark:text-gray-300">
+                Get the latest updates on our services and industry insights
+              </p>
             </div>
             <motion.button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 px-4 rounded-md 
+              transition-all duration-200 shadow-md hover:shadow-lg border border-green-500/30"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

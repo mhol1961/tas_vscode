@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
 
   return (
     <PageLayout>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-primary-slate p-6 rounded-lg">
         <motion.div
           initial="hidden"
           animate="visible"

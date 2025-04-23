@@ -4,7 +4,7 @@ import React from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaHome, FaTools, FaInfoCircle, FaLaptopCode, FaBookOpen, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaTools, FaInfoCircle, FaLaptopCode, FaBookOpen } from 'react-icons/fa';
 
 const Sitemap = () => {
   const fadeIn = {
@@ -24,7 +24,7 @@ const Sitemap = () => {
 
   return (
     <PageLayout>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto bg-white dark:bg-primary-slate p-6 rounded-lg">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -47,7 +47,7 @@ const Sitemap = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {/* Main Navigation */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FaHome className="text-primary-blue mr-3 text-xl" />
               <h2 className="text-xl font-bold text-primary-navy dark:text-white">Main Navigation</h2>
@@ -92,7 +92,7 @@ const Sitemap = () => {
           </motion.div>
 
           {/* Services */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FaTools className="text-primary-blue mr-3 text-xl" />
               <h2 className="text-xl font-bold text-primary-navy dark:text-white">Our Services</h2>
@@ -132,7 +132,7 @@ const Sitemap = () => {
           </motion.div>
 
           {/* Technologies */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FaLaptopCode className="text-primary-blue mr-3 text-xl" />
               <h2 className="text-xl font-bold text-primary-navy dark:text-white">Technologies</h2>
@@ -161,33 +161,9 @@ const Sitemap = () => {
             </ul>
           </motion.div>
 
-          {/* Resources */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-4">
-              <FaFileAlt className="text-primary-blue mr-3 text-xl" />
-              <h2 className="text-xl font-bold text-primary-navy dark:text-white">Resources</h2>
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/resources" className="text-primary-slate dark:text-white/80 hover:text-primary-blue dark:hover:text-primary-blue transition-colors">
-                  Resource Center
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources/document-creation" className="text-primary-slate dark:text-white/80 hover:text-primary-blue dark:hover:text-primary-blue transition-colors">
-                  Document Creation
-                </Link>
-              </li>
-              <li>
-                <Link href="/affiliate-tools" className="text-primary-slate dark:text-white/80 hover:text-primary-blue dark:hover:text-primary-blue transition-colors">
-                  Affiliate Tools
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
 
           {/* Blog & Case Studies */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FaBookOpen className="text-primary-blue mr-3 text-xl" />
               <h2 className="text-xl font-bold text-primary-navy dark:text-white">Blog & Case Studies</h2>
@@ -207,7 +183,7 @@ const Sitemap = () => {
           </motion.div>
 
           {/* Company & Legal */}
-          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <motion.div variants={fadeIn} className="bg-white dark:bg-primary-navy/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FaInfoCircle className="text-primary-blue mr-3 text-xl" />
               <h2 className="text-xl font-bold text-primary-navy dark:text-white">Company & Legal</h2>
@@ -250,7 +226,7 @@ const Sitemap = () => {
           className="mt-12 text-center"
         >
           <p className="text-primary-slate dark:text-white/80 mb-6">
-            Can't find what you're looking for? Feel free to contact us directly.
+            Can&apos;t find what you&apos;re looking for? Feel free to contact us directly.
           </p>
           <Link href="/contact" className="inline-block px-6 py-3 bg-primary-blue text-white font-medium rounded-lg hover:bg-primary-blue/90 transition-colors">
             Contact Us

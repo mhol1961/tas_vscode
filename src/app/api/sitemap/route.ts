@@ -24,11 +24,6 @@ const pages = [
   { url: '/services/technologies/marketing', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
   { url: '/services/technologies/compare', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
   
-  // Resources Pages
-  { url: '/resources', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
-  { url: '/resources/document-creation', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
-  { url: '/affiliate-tools', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.6 },
-  
   // Legal Pages
   { url: '/privacy', lastmod: new Date().toISOString().split('T')[0], changefreq: 'yearly', priority: 0.5 },
   { url: '/terms', lastmod: new Date().toISOString().split('T')[0], changefreq: 'yearly', priority: 0.5 },

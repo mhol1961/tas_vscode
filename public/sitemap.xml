@@ -102,25 +102,6 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Resources Pages -->
-  <url>
-    <loc>https://technologyalliancesolutions.com/resources</loc>
-    <lastmod>2025-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://technologyalliancesolutions.com/resources/document-creation</loc>
-    <lastmod>2025-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://technologyalliancesolutions.com/affiliate-tools</loc>
-    <lastmod>2025-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <!-- Legal Pages -->
   <url>
