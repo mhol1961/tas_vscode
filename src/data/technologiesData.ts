@@ -166,7 +166,7 @@ export const technologies: { [key: string]: TechnologyDetails } = {
       'Costs can escalate quickly when adding multiple Hubs or users.',
       'Some essential features locked behind higher tiers.'
     ],
-    imageUrl: 'https://placehold.co/600x400/EEE/31343C?text=HubSpot',
+    imageUrl: '/images/photos/Hubspot_logo.png',
     costSummary: 'Free CRM available; Paid Hubs start ~$20/mo',
     feature_contactManagement: true,
     feature_leadManagement: true,
@@ -213,7 +213,7 @@ export const technologies: { [key: string]: TechnologyDetails } = {
       'Additional costs for certain features or add-ons.',
       'Implementation and training services often recommended.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1556155092-c36983bad739?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/photos/Adobe_marketo_engage.png',
     costSummary: 'Quote-based; Enterprise focus',
     feature_contactManagement: true,
     feature_leadManagement: true,
@@ -306,7 +306,7 @@ export const technologies: { [key: string]: TechnologyDetails } = {
       'Different tiers available (e.g., Basic, Business, Premier).',
       'Requires an existing Microsoft Dynamics 365 instance.'
     ],
-    imageUrl: 'https://placehold.co/600x400/EEE/31343C?text=ClickDimensions',
+    imageUrl: '/images/photos/ClickDimensions.png',
     costSummary: 'Quote-based; Requires Dynamics 365',
     feature_contactManagement: true,
     feature_leadManagement: true,
@@ -352,7 +352,7 @@ export const technologies: { [key: string]: TechnologyDetails } = {
       'Costs increase with contact list size.',
       'Sales CRM features require higher tiers (Plus and above).' 
     ],
-    imageUrl: 'https://placehold.co/600x400/EEE/31343C?text=ActiveCampaign',
+    imageUrl: '/images/photos/ActiveCampaign.png',
     costSummary: 'Starts ~$9/mo (Lite - Marketing)',
     feature_contactManagement: true,
     feature_leadManagement: true,

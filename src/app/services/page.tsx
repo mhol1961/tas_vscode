@@ -15,7 +15,12 @@ import {
   FaDatabase, 
   FaStar, 
   FaHashtag,
-  FaChevronRight
+  FaChevronRight,
+  FaNetworkWired,
+  FaCogs,
+  FaTools,
+  FaServer,
+  FaLaptopCode
 } from 'react-icons/fa';
 
 const services = [
@@ -32,9 +37,9 @@ const services = [
       'Content Optimization',
       'Keyword Research & Strategy'
     ],
-    image: '/images/photos/Marketing_growth_success.jpg',
+    image: '/images/photos/SEO_Services.png',
     color: 'from-blue-600 to-purple-600',
-    link: '/services/seo'
+    link: '/services/seo-services'
   },
   {
     id: 'website-creation',
@@ -136,7 +141,92 @@ const services = [
     ],
     image: '/images/photos/Two_People_looking_at_screen1.png',
     color: 'from-pink-500 to-rose-500',
-    link: '/services/social-media'
+    link: '/services/social-media-management'
+  },
+  {
+    id: 'technology-integration',
+    title: 'Technology Integration',
+    icon: FaNetworkWired,
+    description: 'Seamlessly connect your business systems with advanced integration solutions for improved workflow.',
+    benefits: [
+      'Cross-Platform System Integration',
+      'API Development & Management',
+      'Data Migration & Synchronization',
+      'Legacy System Integration',
+      'Custom Integration Workflows',
+      'Third-Party Software Integration'
+    ],
+    image: '/images/photos/System_optimization.png',
+    color: 'from-indigo-600 to-blue-500',
+    link: '/services/technology-integration'
+  },
+  {
+    id: 'marketing-automation',
+    title: 'Marketing Automation',
+    icon: FaCogs,
+    description: 'Implement intelligent automation to streamline your marketing processes and improve campaign results.',
+    benefits: [
+      'Automated Campaign Management',
+      'Lead Scoring & Nurturing Workflows',
+      'Trigger-Based Marketing Actions',
+      'Personalized Customer Journeys',
+      'Integrated Analytics & Reporting',
+      'Multi-Channel Marketing Automation'
+    ],
+    image: '/images/photos/MArketingAtuomationPlatforms.png',
+    color: 'from-red-500 to-orange-400',
+    link: '/services/marketing-automation'
+  },
+  {
+    id: 'custom-solutions',
+    title: 'Custom Solutions',
+    icon: FaTools,
+    description: 'Get tailored software and integration solutions designed specifically for your unique business challenges.',
+    benefits: [
+      'Bespoke Software Development',
+      'Custom API Integrations',
+      'Specialized Workflow Automation',
+      'Industry-Specific Solutions',
+      'Scalable Architecture Design',
+      'Ongoing Support & Maintenance'
+    ],
+    image: '/images/photos/TASComparisonCollab.png',
+    color: 'from-emerald-600 to-teal-500',
+    link: '/services/custom-solutions'
+  },
+  {
+    id: 'system-optimization',
+    title: 'System Optimization',
+    icon: FaServer,
+    description: 'Improve performance and efficiency with our expert system optimization and enhancement services.',
+    benefits: [
+      'System Performance Analysis',
+      'Process Automation & Streamlining',
+      'Database Optimization',
+      'Workflow Efficiency Improvements',
+      'System Architecture Enhancements',
+      'Scalability & Future-Proofing'
+    ],
+    image: '/images/photos/System_optimization.png',
+    color: 'from-cyan-500 to-sky-600',
+    link: '/services/system-optimization'
+  },
+  {
+    id: 'technology-consulting',
+    title: 'Technology Consulting',
+    icon: FaLaptopCode,
+    description: 'Get expert guidance on technology strategy, implementation, and optimization for your business.',
+    benefits: [
+      'Technology Stack Assessment',
+      'Digital Transformation Strategy',
+      'Software Selection & Implementation',
+      'IT Roadmap Development',
+      'Technology Vendor Evaluation',
+      'Implementation Planning & Support'
+    ],
+    image: '/images/photos/TASCompCollab.png',
+    color: 'from-violet-600 to-purple-500',
+    link: '/services/technologies'
   }
 ];
 
@@ -246,7 +336,7 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className="text-base text-primary-blue font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 rounded-full"
               >
-                Why Choose Intelligrow
+                Why Choose Technology Alliance Solutions
               </motion.span>
               <AnimatedText
                 text="Comprehensive Business Solutions"
@@ -270,7 +360,7 @@ export default function ServicesPage() {
                   <div className="relative h-80">
                     <Image 
                       src="/images/photos/Two_people_looking_at_screen.png"
-                      alt="Intelligrow Services"
+                      alt="Technology Alliance Solutions Services"
                       fill
                       className="object-cover object-center"
                     />
@@ -284,7 +374,7 @@ export default function ServicesPage() {
                   Full-Service Digital Solutions
                 </h3>
                 <p className="text-primary-slate dark:text-white/80 mb-8">
-                  At Intelligrow, we understand that modern businesses need integrated solutions. That's why we offer a complete range of services that work together seamlessly to maximize your marketing efforts and drive tangible results.
+                  At Technology Alliance Solutions, we understand that modern businesses need integrated solutions. That&apos;s why we offer a complete range of services that work together seamlessly to maximize your marketing efforts and drive tangible results.
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -321,148 +411,101 @@ export default function ServicesPage() {
         <section className="py-20 bg-white dark:bg-primary-slate border-t border-gray-200 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-primary-navy dark:text-white mb-4">
-                Service Packages
-              </h2>
-              <p className="text-lg text-primary-slate dark:text-white/80 max-w-3xl mx-auto">
-                Choose from our range of service packages designed to meet your specific business needs and budget.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Starter Package */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-primary-light dark:bg-primary-navy/50 rounded-xl overflow-hidden shadow-lg flex flex-col"
+                className="text-base text-primary-blue font-semibold tracking-wide uppercase mb-3 inline-block px-4 py-1 bg-primary-blue/10 rounded-full"
               >
-                <div className="p-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Starter</h3>
-                  <div className="text-3xl font-bold mb-2">$499<span className="text-base font-normal">/mo</span></div>
-                  <p className="text-white/80">Perfect for small businesses getting started with digital marketing</p>
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {[
-                      'Basic SEO optimization',
-                      'Simple website setup',
-                      'Email marketing setup',
-                      'Social media management (1 platform)',
-                      'Monthly performance report',
-                      'Email support'
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-green-500 mr-2">✓</span>
-                        <span className="text-primary-navy dark:text-white/90">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link href="/contact" className="mt-auto block">
-                    <button className="w-full py-3 px-4 bg-primary-blue hover:bg-primary-blue/90 text-white rounded-md transition-colors font-medium">
-                      Get Started
-                    </button>
-                  </Link>
-                </div>
-              </motion.div>
-              
-              {/* Professional Package */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-primary-light dark:bg-primary-navy/50 rounded-xl overflow-hidden shadow-2xl flex flex-col transform scale-105 z-10 ring-4 ring-green-500/20"
-              >
-                <div className="p-8 bg-gradient-to-r from-green-600 to-teal-600 text-white">
-                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-sm font-semibold mb-3">
-                    Most Popular
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Professional</h3>
-                  <div className="text-3xl font-bold mb-2">$999<span className="text-base font-normal">/mo</span></div>
-                  <p className="text-white/80">Comprehensive solution for growing businesses</p>
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {[
-                      'Advanced SEO optimization',
-                      'Custom website development',
-                      'Email marketing automation',
-                      'Social media management (3 platforms)',
-                      'Lead generation system',
-                      'CRM integration',
-                      'Bi-weekly performance reports',
-                      'Priority email & chat support'
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-green-500 mr-2">✓</span>
-                        <span className="text-primary-navy dark:text-white/90">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link href="/contact" className="mt-auto block">
-                    <button className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors font-medium">
-                      Get Started
-                    </button>
-                  </Link>
-                </div>
-              </motion.div>
-              
-              {/* Enterprise Package */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="bg-primary-light dark:bg-primary-navy/50 rounded-xl overflow-hidden shadow-lg flex flex-col"
-              >
-                <div className="p-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-                  <div className="text-3xl font-bold mb-2">$1,999<span className="text-base font-normal">/mo</span></div>
-                  <p className="text-white/80">Full-scale solution for established businesses</p>
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {[
-                      'Premium SEO strategy & implementation',
-                      'Advanced website with e-commerce',
-                      'Comprehensive email marketing',
-                      'Social media management (all platforms)',
-                      'Advanced lead generation system',
-                      'Full CRM & automation setup',
-                      'Reputation management',
-                      'Weekly performance reports',
-                      '24/7 dedicated support'
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-green-500 mr-2">✓</span>
-                        <span className="text-primary-navy dark:text-white/90">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link href="/contact" className="mt-auto block">
-                    <button className="w-full py-3 px-4 bg-primary-blue hover:bg-primary-blue/90 text-white rounded-md transition-colors font-medium">
-                      Get Started
-                    </button>
-                  </Link>
-                </div>
-              </motion.div>
+                Customized For Your Business
+              </motion.span>
+              <h2 className="text-3xl font-bold text-primary-navy dark:text-white mb-4">
+                Tailored Service Solutions
+              </h2>
+              <p className="text-lg text-primary-slate dark:text-white/80 max-w-3xl mx-auto">
+                We believe that every business has unique challenges and goals. Our service packages are meticulously crafted to address your specific needs rather than offering one-size-fits-all solutions.
+              </p>
             </div>
             
-            <div className="text-center mt-12">
-              <p className="text-primary-slate dark:text-white/80 mb-4">
-                Need a custom solution? We offer tailored packages to meet your specific needs.
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-primary-navy/5 to-primary-blue/5 dark:from-primary-navy/30 dark:to-primary-blue/30 rounded-2xl overflow-hidden shadow-xl p-8 md:p-12"
+            >
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-primary-navy dark:text-white mb-6">
+                    Strategic, Results-Driven Approach
+                  </h3>
+                  <p className="text-primary-slate dark:text-white/80 mb-6">
+                    Each solution we design begins with a thorough assessment of your business objectives, industry landscape, and growth targets. This collaborative approach ensures our services deliver maximum ROI and sustainable growth.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    {[
+                      'Flexible service components that scale with your business',
+                      'Transparent delivery process with regular reporting',
+                      'Continuous optimization based on performance analytics',
+                      'Dedicated support from industry specialists',
+                      'Integration with your existing technology stack'
+                    ].map((item, i) => (
+                      <motion.div 
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * i }}
+                        viewport={{ once: true }}
+                        className="flex items-start"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-green-600 dark:text-green-400 text-xs">✓</span>
+                        </div>
+                        <span className="text-primary-navy dark:text-white/90 ml-3">{item}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8">
+                    <Link href="/contact">
+                      <AnimatedButton className="bg-primary-blue hover:bg-primary-blue/90 text-white border-transparent shadow-lg">
+                        Request Custom Solution
+                      </AnimatedButton>
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  <Image
+                    src="/images/photos/Marketing_growth_success.jpg"
+                    alt="Tailored business solutions"
+                    width={600}
+                    height={400}
+                    className="rounded-xl shadow-lg"
+                  />
+                  <div className="absolute -bottom-6 -right-6 bg-white dark:bg-primary-navy p-4 rounded-lg shadow-xl">
+                    <div className="flex items-center space-x-2">
+                      <FaStar className="text-yellow-500" />
+                      <span className="text-primary-navy dark:text-white font-bold">Custom Solutions</span>
+                    </div>
+                    <p className="text-sm text-primary-slate dark:text-white/80 mt-1">
+                      Designed for your specific business goals
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <div className="text-center mt-16">
+              <p className="text-primary-slate dark:text-white/80 mb-6">
+                Ready to discover how our services can be tailored to your specific needs? 
+                Our consultants will craft a solution that aligns perfectly with your business goals and budget.
               </p>
               <Link href="/contact">
                 <AnimatedButton className="bg-transparent hover:bg-primary-blue/10 text-primary-blue border-primary-blue">
-                  Contact for Custom Pricing
+                  Schedule a Free Consultation
                 </AnimatedButton>
               </Link>
             </div>
@@ -487,7 +530,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               className="text-xl text-white/90 mb-10 max-w-3xl mx-auto"
             >
-              Join hundreds of businesses that have transformed their operations with our AI-powered solutions. Schedule a call today and let's discuss how we can help you grow.
+              Join hundreds of businesses that have transformed their operations with our AI-powered solutions. Schedule a call today and let&apos;s discuss how we can help you grow.
             </motion.p>
             
             <div className="flex flex-wrap justify-center gap-4">

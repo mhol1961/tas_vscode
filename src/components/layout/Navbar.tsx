@@ -14,10 +14,16 @@ const navigation = [
     name: 'Services', 
     href: '/services', 
     submenu: [
-      { name: 'CRM Implementation', href: '/services/crm' },
+      { name: 'SEO Services', href: '/services/seo-services' },
+      { name: 'Website Creation', href: '/services/website-creation' },
+      { name: 'Email Marketing', href: '/services/email-marketing' },
+      { name: 'Lead Generation', href: '/services/lead-generation' },
+      { name: 'CRM & Automation', href: '/services/crm' },
+      { name: 'Reputation Management', href: '/services/reputation-management' },
+      { name: 'Social Media Management', href: '/services/social-media-management' },
       { name: 'Technology Integration', href: '/services/technology-integration' },
       { name: 'Marketing Automation', href: '/services/marketing-automation' },
-      { name: 'Custom Solutions', href: '/services/integration' },
+      { name: 'Custom Solutions', href: '/services/custom-solutions' },
       { name: 'System Optimization', href: '/services/system-optimization' },
       { name: 'Technology Consulting', href: '/services/technologies' }
     ]
