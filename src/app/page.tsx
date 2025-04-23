@@ -59,26 +59,26 @@ const features = [
     title: 'Custom Solutions',
     description: 'Tailored software solutions designed specifically for your unique business challenges, from custom integrations to bespoke applications.',
     icon: FaLaptopCode,
-    link: '/services/integration'
+    link: '/services/custom-solutions'
   },
   {
     title: 'System Optimization',
     description: 'Maximize the performance of your existing technology investments with expert analysis, fine-tuning, and enhancement of your systems.',
     icon: FaCogs,
-    link: '/services/technologies/compare'
+    link: '/services/system-optimization'
   },
   {
     title: 'Data Management',
     description: 'Comprehensive data solutions including migration, cleansing, governance, and analytics to help you leverage your business information effectively.',
     icon: FaDatabase,
-    link: '/services/integration'
+    link: '/services/data-management'
   }
 ];
 
 const businessServices = [
   { name: 'CRM Strategy', description: 'Strategic planning for CRM implementation and adoption', link: '/services/crm' },
   { name: 'System Integration', description: 'Connect your critical business applications', link: '/services/technology-integration' },
-  { name: 'Technology Consulting', description: 'Expert guidance on your technology ecosystem', link: '/services/technologies/compare' },
+  { name: 'Technology Consulting', description: 'Expert guidance on your technology ecosystem', link: '/services/system-optimization' },
   { name: 'Automation Solutions', description: 'Streamline processes and boost efficiency', link: '/services/marketing-automation' }
 ];
 
