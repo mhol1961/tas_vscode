@@ -122,7 +122,7 @@ const services = [
       'Review Generation Campaigns',
       'Reputation Recovery Strategies'
     ],
-    image: '/images/photos/WhyChooseUs.png',
+    image: '/images/photos/Two_people_looking_at_screen.png',
     color: 'from-yellow-500 to-amber-600',
     link: '/services/reputation-management'
   },
@@ -359,7 +359,7 @@ export default function ServicesPage() {
                 <div className="bg-white dark:bg-primary-slate/50 rounded-xl shadow-xl overflow-hidden">
                   <div className="relative h-80">
                     <Image 
-                      src="/images/photos/WhyChooseUs.png"
+                      src="/images/photos/Two_people_looking_at_screen.png"
                       alt="Technology Alliance Solutions Services"
                       fill
                       className="object-cover object-center"
