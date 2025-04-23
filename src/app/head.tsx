@@ -6,19 +6,19 @@ export default function Head() {
           __html: `
             (function() {
               try {
-                const storedTheme = localStorage.getItem('theme');
-                if (storedTheme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                } else if (storedTheme === 'light') {
-                  document.documentElement.classList.remove('dark');
+                const storedTheme = localStorage.getItem(&apos;theme');
+                if (storedTheme === &apos;dark') {
+                  document.documentElement.classList.add(&apos;dark');
+                } else if (storedTheme === &apos;light') {
+                  document.documentElement.classList.remove(&apos;dark');
                 } else {
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const prefersDark = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches;
                   if (prefersDark) {
-                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.add(&apos;dark');
                   }
                 }
               } catch (e) {
-                console.error('Error applying theme:', e);
+                console.error(&apos;Error applying theme:&apos;, e);
               }
             })();
           `,

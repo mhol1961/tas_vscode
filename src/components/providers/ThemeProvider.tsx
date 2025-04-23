@@ -1,8 +1,8 @@
-'use client';
+&apos;use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from &apos;react';
 
-type Theme = 'light' | 'dark';
+type Theme = &apos;light' | &apos;dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,7 +11,7 @@ interface ThemeContextType {
 
 // Create the context with a default value
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: &apos;light',
   toggleTheme: () => {},
 });
 
@@ -19,7 +19,7 @@ const ThemeContext = createContext<ThemeContextType>({
 export const useTheme = () => useContext(ThemeContext);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>(&apos;light');
   const [mounted, setMounted] = useState(false);
 
   // Initialize theme on client side only
@@ -27,32 +27,32 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
     
     // Get initial theme from localStorage or system preference
-    const storedTheme = localStorage.getItem('theme') as Theme;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem(&apos;theme') as Theme;
+    const prefersDark = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches;
     
-    if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
+    if (storedTheme === &apos;dark' || (!storedTheme && prefersDark)) {
+      setTheme(&apos;dark');
+      document.documentElement.classList.add(&apos;dark');
     } else {
-      setTheme('light');
-      document.documentElement.classList.remove('dark');
+      setTheme(&apos;light');
+      document.documentElement.classList.remove(&apos;dark');
     }
   }, []);
 
   // Toggle between light and dark mode
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === &apos;light' ? &apos;dark' : &apos;light';
     setTheme(newTheme);
     
     // Apply theme to document
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
+    if (newTheme === &apos;dark') {
+      document.documentElement.classList.add(&apos;dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove(&apos;dark');
     }
     
     // Save preference to localStorage
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem(&apos;theme', newTheme);
   };
 
   // Avoid hydration mismatch

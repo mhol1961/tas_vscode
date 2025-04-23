@@ -1,7 +1,7 @@
-'use client';
+&apos;use client';
 
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from &apos;framer-motion';
+import React from &apos;react';
 
 interface AnimatedButtonProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface AnimatedButtonProps {
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   children,
   onClick,
-  className = ''
+  className = &apos;&apos;
 }) => {
   return (
     <motion.button
@@ -23,14 +23,14 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     >
       {/* Animated background effect */}
       <motion.span
-        className="absolute inset-0 bg-transparent" // Make overlay transparent
-        initial={{ x: '-100%' }}
-        whileHover={{ x: '100%' }}
+        className=&quot;absolute inset-0 bg-transparent&quot; // Make overlay transparent
+        initial={{ x: &apos;-100%&apos; }}
+        whileHover={{ x: &apos;100%&apos; }}
         transition={{ duration: 0.8 }}
       />
 
       {/* Button content */}
-      <span className="relative z-10">{children}</span>
+      <span className=&quot;relative z-10">{children}</span>
     </motion.button>
   );
 };

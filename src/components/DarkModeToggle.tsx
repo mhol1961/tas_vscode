@@ -1,7 +1,7 @@
-'use client';
+&apos;use client';
 
-import { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useState, useEffect } from &apos;react';
+import { FaSun, FaMoon } from &apos;react-icons/fa';
 
 export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,14 +13,14 @@ export default function DarkModeToggle() {
     setMounted(true);
     
     // Check if dark mode is currently active
-    const isDarkMode = document.documentElement.classList.contains('dark');
+    const isDarkMode = document.documentElement.classList.contains(&apos;dark');
     setDarkMode(isDarkMode);
     
     // Add an event listener to detect changes to the HTML class
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          const isDark = document.documentElement.classList.contains('dark');
+        if (mutation.attributeName === &apos;class') {
+          const isDark = document.documentElement.classList.contains(&apos;dark');
           setDarkMode(isDark);
         }
       });
@@ -36,38 +36,38 @@ export default function DarkModeToggle() {
   // Toggle dark mode
   const toggleDarkMode = () => {
     // Force direct DOM manipulation for immediate visual feedback
-    if (document.documentElement.classList.contains('dark')) {
+    if (document.documentElement.classList.contains(&apos;dark')) {
       // Switch to light mode
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove(&apos;dark');
       try {
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem(&apos;theme', &apos;light');
       } catch (e) {
-        console.warn('Could not save theme preference', e);
+        console.warn(&apos;Could not save theme preference', e);
       }
     } else {
       // Switch to dark mode
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add(&apos;dark');
       try {
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem(&apos;theme', &apos;dark');
       } catch (e) {
-        console.warn('Could not save theme preference', e);
+        console.warn(&apos;Could not save theme preference', e);
       }
     }
   };
 
-  // Don't render during SSR to prevent hydration issues
+  // Don&apos;t render during SSR to prevent hydration issues
   if (!mounted) return null;
 
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-full bg-white dark:bg-primary-slate text-primary-blue dark:text-white hover:bg-primary-light dark:hover:bg-primary-navy transition-colors border border-primary-blue"
-      aria-label="Toggle dark mode"
-      type="button"
+      className=&quot;p-2 rounded-full bg-white dark:bg-primary-slate text-primary-blue dark:text-white hover:bg-primary-light dark:hover:bg-primary-navy transition-colors border border-primary-blue&quot;
+      aria-label=&quot;Toggle dark mode&quot;
+      type=&quot;button"
     >
       {darkMode ? 
-        <FaSun size={18} className="text-yellow-400" /> : 
-        <FaMoon size={18} className="text-primary-blue dark:text-white" />
+        <FaSun size={18} className=&quot;text-yellow-400&quot; /> : 
+        <FaMoon size={18} className=&quot;text-primary-blue dark:text-white&quot; />
       }
     </button>
   );

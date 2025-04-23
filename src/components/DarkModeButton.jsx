@@ -1,7 +1,7 @@
-'use client';
+&apos;use client';
 
-import { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useState, useEffect } from &apos;react';
+import { FaSun, FaMoon } from &apos;react-icons/fa';
 
 export default function DarkModeButton() {
   const [isDark, setIsDark] = useState(false);
@@ -10,34 +10,34 @@ export default function DarkModeButton() {
   // Initialize on client-side only
   useEffect(() => {
     setMounted(true);
-    setIsDark(document.documentElement.classList.contains('dark'));
+    setIsDark(document.documentElement.classList.contains(&apos;dark'));
     
     // Listen for changes to the dark mode class
     const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains('dark'));
+      setIsDark(document.documentElement.classList.contains(&apos;dark'));
     });
     
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: [&apos;class']
     });
     
     return () => observer.disconnect();
   }, []);
 
-  // Don't render during SSR
+  // Don&apos;t render during SSR
   if (!mounted) return null;
 
   return (
     <button
       onClick={() => window.toggleDarkMode?.()}
-      className="p-2 rounded-full bg-white dark:bg-primary-slate hover:bg-gray-100 dark:hover:bg-primary-navy transition-colors"
-      aria-label="Toggle dark mode"
+      className=&quot;p-2 rounded-full bg-white dark:bg-primary-slate hover:bg-gray-100 dark:hover:bg-primary-navy transition-colors&quot;
+      aria-label=&quot;Toggle dark mode"
     >
       {isDark ? (
-        <FaSun className="text-yellow-400" size={18} />
+        <FaSun className=&quot;text-yellow-400&quot; size={18} />
       ) : (
-        <FaMoon className="text-primary-blue" size={18} />
+        <FaMoon className=&quot;text-primary-blue&quot; size={18} />
       )}
     </button>
   );

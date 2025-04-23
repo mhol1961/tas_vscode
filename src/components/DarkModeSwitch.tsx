@@ -1,7 +1,7 @@
-'use client';
+&apos;use client';
 
-import { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useState, useEffect } from &apos;react';
+import { FaSun, FaMoon } from &apos;react-icons/fa';
 
 // Simple dark mode switch component
 export default function DarkModeSwitch() {
@@ -10,25 +10,25 @@ export default function DarkModeSwitch() {
   // Initialize on mount
   useEffect(() => {
     // Get initial state from localStorage
-    const savedMode = localStorage.getItem('tas-dark-mode');
-    const initialState = savedMode === 'true' || 
-      (savedMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const savedMode = localStorage.getItem(&apos;tas-dark-mode');
+    const initialState = savedMode === &apos;true' || 
+      (savedMode === null && window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches);
     
     // Apply initial state
     setIsDark(initialState);
     applyDarkMode(initialState);
     
     // Listen for system changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;);
     const handleChange = (e: MediaQueryListEvent) => {
-      if (localStorage.getItem('tas-dark-mode') === null) {
+      if (localStorage.getItem(&apos;tas-dark-mode') === null) {
         setIsDark(e.matches);
         applyDarkMode(e.matches);
       }
     };
     
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    mediaQuery.addEventListener(&apos;change', handleChange);
+    return () => mediaQuery.removeEventListener(&apos;change', handleChange);
   }, []);
   
   // Toggle dark mode
@@ -36,56 +36,56 @@ export default function DarkModeSwitch() {
     const newState = !isDark;
     setIsDark(newState);
     applyDarkMode(newState);
-    localStorage.setItem('tas-dark-mode', newState.toString());
+    localStorage.setItem(&apos;tas-dark-mode', newState.toString());
   };
   
   // Apply dark mode to the document
   const applyDarkMode = (dark: boolean) => {
     if (dark) {
-      document.documentElement.style.setProperty('--bg-color', '#2C3E50');
-      document.documentElement.style.setProperty('--text-color', '#FFFFFF');
-      document.documentElement.style.setProperty('--nav-bg', '#34495E');
-      document.documentElement.style.setProperty('--card-bg', '#34495E');
-      document.documentElement.style.setProperty('--border-color', '#4A5568');
-      document.body.style.backgroundColor = '#2C3E50';
-      document.body.style.color = '#FFFFFF';
+      document.documentElement.style.setProperty(&apos;--bg-color', &apos;#2C3E50');
+      document.documentElement.style.setProperty(&apos;--text-color', &apos;#FFFFFF');
+      document.documentElement.style.setProperty(&apos;--nav-bg', &apos;#34495E');
+      document.documentElement.style.setProperty(&apos;--card-bg', &apos;#34495E');
+      document.documentElement.style.setProperty(&apos;--border-color', &apos;#4A5568');
+      document.body.style.backgroundColor = &apos;#2C3E50';
+      document.body.style.color = &apos;#FFFFFF';
     } else {
-      document.documentElement.style.setProperty('--bg-color', '#FFFFFF');
-      document.documentElement.style.setProperty('--text-color', '#2C3E50');
-      document.documentElement.style.setProperty('--nav-bg', '#FFFFFF');
-      document.documentElement.style.setProperty('--card-bg', '#F7FAFC');
-      document.documentElement.style.setProperty('--border-color', '#E2E8F0');
-      document.body.style.backgroundColor = '#FFFFFF';
-      document.body.style.color = '#2C3E50';
+      document.documentElement.style.setProperty(&apos;--bg-color', &apos;#FFFFFF');
+      document.documentElement.style.setProperty(&apos;--text-color', &apos;#2C3E50');
+      document.documentElement.style.setProperty(&apos;--nav-bg', &apos;#FFFFFF');
+      document.documentElement.style.setProperty(&apos;--card-bg', &apos;#F7FAFC');
+      document.documentElement.style.setProperty(&apos;--border-color', &apos;#E2E8F0');
+      document.body.style.backgroundColor = &apos;#FFFFFF';
+      document.body.style.color = &apos;#2C3E50';
     }
     
     // Force all sections to use the correct background
-    document.querySelectorAll('section').forEach(section => {
-      section.style.backgroundColor = dark ? '#2C3E50' : '#FFFFFF';
-      section.style.color = dark ? '#FFFFFF' : '#2C3E50';
+    document.querySelectorAll(&apos;section').forEach(section => {
+      section.style.backgroundColor = dark ? &apos;#2C3E50' : &apos;#FFFFFF';
+      section.style.color = dark ? &apos;#FFFFFF' : &apos;#2C3E50';
     });
     
     // Force navbar to use correct background
-    document.querySelectorAll('nav').forEach(nav => {
-      nav.style.backgroundColor = dark ? '#34495E' : '#FFFFFF';
-      nav.style.color = dark ? '#FFFFFF' : '#2C3E50';
+    document.querySelectorAll(&apos;nav').forEach(nav => {
+      nav.style.backgroundColor = dark ? &apos;#34495E' : &apos;#FFFFFF';
+      nav.style.color = dark ? &apos;#FFFFFF' : &apos;#2C3E50';
     });
   };
   
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors border border-gray-300"
+      className=&quot;p-2 rounded-full bg-white hover:bg-gray-100 transition-colors border border-gray-300&quot;
       style={{
-        backgroundColor: isDark ? '#34495E' : '#FFFFFF',
-        color: isDark ? '#FFFFFF' : '#2C3E50',
-        border: `1px solid ${isDark ? '#4A5568' : '#E2E8F0'}`
+        backgroundColor: isDark ? &apos;#34495E' : &apos;#FFFFFF',
+        color: isDark ? &apos;#FFFFFF' : &apos;#2C3E50',
+        border: `1px solid ${isDark ? &apos;#4A5568' : &apos;#E2E8F0'}`
       }}
     >
       {isDark ? (
-        <FaSun size={18} style={{ color: '#F6E05E' }} />
+        <FaSun size={18} style={{ color: &apos;#F6E05E' }} />
       ) : (
-        <FaMoon size={18} style={{ color: '#3498DB' }} />
+        <FaMoon size={18} style={{ color: &apos;#3498DB' }} />
       )}
     </button>
   );

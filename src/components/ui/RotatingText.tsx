@@ -1,7 +1,7 @@
-'use client';
+&apos;use client';
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from &apos;react';
+import { motion, AnimatePresence } from &apos;framer-motion';
 
 interface RotatingTextProps {
   words: string[];
@@ -13,8 +13,8 @@ interface RotatingTextProps {
 const RotatingText: React.FC<RotatingTextProps> = ({
   words,
   interval = 4000,
-  className = '',
-  textColor = 'text-sky-300'
+  className = &apos;&apos;,
+  textColor = &apos;text-sky-300'
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -28,7 +28,7 @@ const RotatingText: React.FC<RotatingTextProps> = ({
   
   return (
     <div className={`relative h-[1.5em] ${className}`}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode=&quot;wait">
         <motion.span
           key={currentIndex}
           initial={{ y: 20, opacity: 0 }}
@@ -36,7 +36,7 @@ const RotatingText: React.FC<RotatingTextProps> = ({
           exit={{ y: -20, opacity: 0 }}
           transition={{ 
             duration: 0.5,
-            ease: "easeInOut"
+            ease: &quot;easeInOut&quot;
           }}
           className={`absolute ${textColor} font-bold`}
         >

@@ -1,8 +1,8 @@
-'use client';
+&apos;use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from &apos;react';
 
-type Theme = 'light' | 'dark';
+type Theme = &apos;light' | &apos;dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -12,52 +12,50 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<Theme>(&apos;light');
 
   // Initialize theme on client-side only
   useEffect(() => {
-    setMounted(true);
     
     // Function to update theme in DOM and state
     const updateTheme = (newTheme: Theme) => {
       setTheme(newTheme);
-      if (newTheme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (newTheme === &apos;dark') {
+        document.documentElement.classList.add(&apos;dark');
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove(&apos;dark');
       }
     };
 
     // Get initial theme from localStorage or system preference
     try {
-      const savedTheme = localStorage.getItem('theme') as Theme | null;
+      const savedTheme = localStorage.getItem(&apos;theme') as Theme | null;
       if (savedTheme) {
         updateTheme(savedTheme);
       } else {
         // Check system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        updateTheme(prefersDark ? 'dark' : 'light');
+        const prefersDark = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches;
+        updateTheme(prefersDark ? &apos;dark' : &apos;light');
       }
     } catch (e) {
-      console.error('Error initializing theme:', e);
+      console.error(&apos;Error initializing theme:&apos;, e);
     }
   }, []);
 
   // Toggle theme function
   const toggleTheme = () => {
     try {
-      const newTheme = theme === 'light' ? 'dark' : 'light';
+      const newTheme = theme === &apos;light' ? &apos;dark' : &apos;light';
       setTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
+      localStorage.setItem(&apos;theme', newTheme);
       
-      if (newTheme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (newTheme === &apos;dark') {
+        document.documentElement.classList.add(&apos;dark');
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove(&apos;dark');
       }
     } catch (e) {
-      console.error('Error toggling theme:', e);
+      console.error(&apos;Error toggling theme:&apos;, e);
     }
   };
 
@@ -72,7 +70,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error(&apos;useTheme must be used within a ThemeProvider');
   }
   return context;
 }

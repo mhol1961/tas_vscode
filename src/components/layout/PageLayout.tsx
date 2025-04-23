@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from &apos;react';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface PageLayoutProps {
 
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="pt-20">
+    <div className=&quot;pt-20">
       {children}
     </div>
   );

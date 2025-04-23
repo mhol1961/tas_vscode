@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
+import { Metadata } from &apos;next';
 
 // Metadata for the page
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Technology Alliance Solutions',
-  description: 'Our commitment to protecting your privacy. Learn how Technology Alliance Solutions handles your data and information.'
+  title: &apos;Privacy Policy | Technology Alliance Solutions',
+  description: &apos;Our commitment to protecting your privacy. Learn how Technology Alliance Solutions handles your data and information.&apos;
 };
 
 export default function PrivacyLayout({
