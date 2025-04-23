@@ -1,0 +1,11 @@
+# robots.txt for Technology Alliance Solutions
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://technologyalliancesolutions.com/api/sitemap
+
+# Optional: Disallow certain paths you don't want indexed
+# Disallow: /admin/
+# Disallow: /private/

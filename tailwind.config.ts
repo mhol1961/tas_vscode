@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+import forms from '@tailwindcss/forms'; // Import the plugin
 
 const config: Config = {
   content: [
@@ -30,6 +31,9 @@ const config: Config = {
           slate: '#34495E',
           light: '#EDF2F7',
           white: '#FFFFFF',
+          darkblue: '#1e3d8f', // Dark blue for navbar
+          red: '#e31937',      // Red from logo dot
+          accentblue: '#2f68ce', // Accent blue for active/hover states
         },
         dark: {
           bg: '#1a202c',
@@ -50,7 +54,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    forms, // Use the imported plugin
   ],
 }
 
