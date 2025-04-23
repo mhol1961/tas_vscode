@@ -5,12 +5,6 @@ import PageLayout from '@/components/layout/PageLayout';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-// Metadata for the page can be set in a separate metadata export
-export const metadata = {
-  title: 'Terms of Service | Technology Alliance Solutions',
-  description: 'Our Terms of Service. Learn about the terms and conditions for using Technology Alliance Solutions services and website.'
-};
-
 const TermsOfService = () => {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },

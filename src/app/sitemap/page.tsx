@@ -6,12 +6,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaHome, FaTools, FaInfoCircle, FaLaptopCode, FaBookOpen, FaFileAlt } from 'react-icons/fa';
 
-// Metadata for the page
-export const metadata = {
-  title: 'Sitemap | Technology Alliance Solutions',
-  description: 'Explore all pages on the Technology Alliance Solutions website with our comprehensive sitemap.'
-};
-
 const Sitemap = () => {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },

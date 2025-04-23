@@ -5,12 +5,6 @@ import PageLayout from '@/components/layout/PageLayout';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-// Metadata for the page can be set in a separate metadata export
-export const metadata = {
-  title: 'Privacy Policy | Technology Alliance Solutions',
-  description: 'Our commitment to protecting your privacy. Learn how Technology Alliance Solutions handles your data and information.'
-};
-
 const PrivacyPolicy = () => {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
