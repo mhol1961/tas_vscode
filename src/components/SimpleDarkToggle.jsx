@@ -1,7 +1,7 @@
-&apos;use client';
+'use client';
 
-import { useState, useEffect } from &apos;react';
-import { FaSun, FaMoon } from &apos;react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 export default function SimpleDarkToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -9,7 +9,7 @@ export default function SimpleDarkToggle() {
 
   // Function to check if dark mode is currently active
   const checkDarkMode = () => {
-    return document.documentElement.classList.contains(&apos;dark');
+    return document.documentElement.classList.contains('dark');
   };
 
   // Initialize on client-side only
@@ -26,7 +26,7 @@ export default function SimpleDarkToggle() {
     // Set up an observer to monitor class changes on the HTML element
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        if (mutation.attributeName === &apos;class') {
+        if (mutation.attributeName === 'class') {
           handleThemeChange();
         }
       });
@@ -34,7 +34,7 @@ export default function SimpleDarkToggle() {
     
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: [&apos;class']
+      attributeFilter: ['class']
     });
     
     return () => observer.disconnect();
@@ -42,17 +42,17 @@ export default function SimpleDarkToggle() {
 
   // Function to toggle dark mode using the global toggle function
   const handleToggle = () => {
-    if (typeof window !== &apos;undefined' && window.toggleDarkMode) {
+    if (typeof window !== 'undefined' && window.toggleDarkMode) {
       try {
-        console.log(&apos;Toggling dark mode from button click');
+        console.log('Toggling dark mode from button click');
         const newDarkState = window.toggleDarkMode();
-        console.log(&apos;New dark state:&apos;, newDarkState);
+        console.log('New dark state:', newDarkState);
         setIsDark(newDarkState);
       } catch (e) {
-        console.error(&apos;Error toggling dark mode:&apos;, e);
+        console.error('Error toggling dark mode:', e);
       }
     } else {
-      console.error(&apos;toggleDarkMode function not available');
+      console.error('toggleDarkMode function not available');
     }
   };
 
@@ -62,14 +62,14 @@ export default function SimpleDarkToggle() {
   return (
     <button
       onClick={handleToggle}
-      className=&quot;p-2 rounded-full bg-white hover:bg-gray-100 dark:bg-primary-slate dark:hover:bg-primary-navy transition-colors&quot;
-      aria-label={isDark ? &apos;Switch to light mode' : &apos;Switch to dark mode'}
-      style={{color: isDark ? &apos;#FFFFFF' : &apos;#3498DB', border: &apos;1px solid #3498DB'}}
+      className="p-2 rounded-full bg-white hover:bg-gray-100 dark:bg-primary-slate dark:hover:bg-primary-navy transition-colors"
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      style={{color: isDark ? '#FFFFFF' : '#3498DB', border: '1px solid #3498DB'}}
     >
       {isDark ? (
-        <FaSun size={18} style={{color: &apos;#F6E05E'}} />
+        <FaSun size={18} style={{color: '#F6E05E'}} />
       ) : (
-        <FaMoon size={18} style={{color: &apos;#3498DB'}} />
+        <FaMoon size={18} style={{color: '#3498DB'}} />
       )}
     </button>
   );

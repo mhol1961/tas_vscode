@@ -1,8 +1,8 @@
-&apos;use client';
+'use client';
 
-import { FaSun, FaMoon } from &apos;react-icons/fa';
-import { useTheme } from &apos;./ThemeProvider';
-import { useEffect, useState } from &apos;react';
+import { FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from './ThemeProvider';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggleButton() {
   const { theme, toggleTheme } = useTheme();
@@ -13,22 +13,22 @@ export default function ThemeToggleButton() {
     setMounted(true);
   }, []);
 
-  // Don&apos;t render anything until after hydration to prevent mismatch
+  // Don't render anything until after hydration to prevent mismatch
   if (!mounted) {
-    return <div className=&quot;w-9 h-9"></div>; // Empty placeholder with same dimensions
+    return <div className="w-9 h-9"></div>; // Empty placeholder with same dimensions
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className=&quot;p-2 rounded-full bg-white dark:bg-primary-slate text-primary-blue dark:text-white hover:bg-primary-light dark:hover:bg-primary-navy transition-colors border border-primary-blue dark:border-white&quot;
-      aria-label={`Switch to ${theme === &apos;dark' ? &apos;light' : &apos;dark'} mode`}
-      type=&quot;button"
+      className="p-2 rounded-full bg-white dark:bg-primary-slate text-primary-blue dark:text-white hover:bg-primary-light dark:hover:bg-primary-navy transition-colors border border-primary-blue dark:border-white"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      type="button"
     >
-      {theme === &apos;dark' ? (
-        <FaSun size={18} className=&quot;text-yellow-400&quot; />
+      {theme === 'dark' ? (
+        <FaSun size={18} className="text-yellow-400" />
       ) : (
-        <FaMoon size={18} className=&quot;text-primary-blue&quot; />
+        <FaMoon size={18} className="text-primary-blue" />
       )}
     </button>
   );

@@ -1,8 +1,8 @@
-&apos;use client';
+'use client';
 
-import Link from &apos;next/link';
-import { motion } from &apos;framer-motion';
-import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram, FaYoutube, FaPhone, FaMapMarkerAlt } from &apos;react-icons/fa';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram, FaYoutube, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   // Animation variants
@@ -23,89 +23,89 @@ const Footer = () => {
   };
 
   return (
-    <footer className=&quot;bg-primary-navy dark:bg-primary-slate text-white relative overflow-hidden">
+    <footer className="bg-primary-navy dark:bg-primary-slate text-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className=&quot;absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
 
       {/* Main Footer Content */}
       <motion.div
-        className=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10&quot;
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
         variants={containerVariants}
-        initial=&quot;hidden&quot;
-        whileInView=&quot;visible&quot;
-        viewport={{ once: true, margin: &quot;-100px&quot; }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
       >
         {/* Company Info */}
-        <motion.div className=&quot;space-y-4&quot; variants={itemVariants}>
-          <h3 className=&quot;text-xl font-bold text-primary-blue">
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-xl font-bold text-primary-blue">
             Technology Alliance Solutions, INC.
           </h3>
-          <p className=&quot;text-sm text-gray-300 leading-relaxed">
+          <p className="text-sm text-gray-300 leading-relaxed">
             Enterprise technology solutions and consulting services specializing in CRM, integration, and marketing automation.
           </p>
-          <div className=&quot;pt-2">
-            <div className=&quot;flex items-center space-x-2 text-sm mb-2">
-              <FaMapMarkerAlt className=&quot;text-primary-blue&quot; />
+          <div className="pt-2">
+            <div className="flex items-center space-x-2 text-sm mb-2">
+              <FaMapMarkerAlt className="text-primary-blue" />
               <span>3355 Lenox Rd NE, Suite 1000, Atlanta, GA 30326</span>
             </div>
-            <div className=&quot;flex items-center space-x-2 text-sm mb-2">
-              <FaPhone className=&quot;text-primary-blue&quot; />
+            <div className="flex items-center space-x-2 text-sm mb-2">
+              <FaPhone className="text-primary-blue" />
               <span>(404) 205-8405</span>
             </div>
           </div>
-          <div className=&quot;flex space-x-4 pt-2">
+          <div className="flex space-x-4 pt-2">
             <motion.a
-              href=&quot;https://linkedin.com/company/technology-alliance-solutions&quot;
-              target=&quot;_blank&quot;
-              rel=&quot;noopener noreferrer&quot;
-              className=&quot;text-primary-blue hover:text-white transition-colors&quot;
+              href="https://linkedin.com/company/technology-alliance-solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-blue hover:text-white transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              aria-label=&quot;LinkedIn"
+              aria-label="LinkedIn"
             >
               <FaLinkedin size={24} />
             </motion.a>
             <motion.a
-              href=&quot;https://twitter.com/tech_alliance&quot;
-              target=&quot;_blank&quot;
-              rel=&quot;noopener noreferrer&quot;
-              className=&quot;text-primary-blue hover:text-white transition-colors&quot;
+              href="https://twitter.com/tech_alliance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-blue hover:text-white transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              aria-label=&quot;Twitter"
+              aria-label="Twitter"
             >
               <FaTwitter size={24} />
             </motion.a>
             <motion.a
-              href=&quot;https://facebook.com/technologyalliancesolutions&quot;
-              target=&quot;_blank&quot;
-              rel=&quot;noopener noreferrer&quot;
-              className=&quot;text-primary-blue hover:text-white transition-colors&quot;
+              href="https://facebook.com/technologyalliancesolutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-blue hover:text-white transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              aria-label=&quot;Facebook"
+              aria-label="Facebook"
             >
               <FaFacebook size={24} />
             </motion.a>
             <motion.a
-              href=&quot;https://instagram.com/tech_alliance_solutions&quot;
-              target=&quot;_blank&quot;
-              rel=&quot;noopener noreferrer&quot;
-              className=&quot;text-primary-blue hover:text-white transition-colors&quot;
+              href="https://instagram.com/tech_alliance_solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-blue hover:text-white transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              aria-label=&quot;Instagram"
+              aria-label="Instagram"
             >
               <FaInstagram size={24} />
             </motion.a>
             <motion.a
-              href=&quot;https://youtube.com/c/technologyalliancesolutions&quot;
-              target=&quot;_blank&quot;
-              rel=&quot;noopener noreferrer&quot;
-              className=&quot;text-primary-blue hover:text-white transition-colors&quot;
+              href="https://youtube.com/c/technologyalliancesolutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-blue hover:text-white transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              aria-label=&quot;YouTube"
+              aria-label="YouTube"
             >
               <FaYoutube size={24} />
             </motion.a>
@@ -113,36 +113,36 @@ const Footer = () => {
         </motion.div>
 
         {/* Services Links */}
-        <motion.div className=&quot;space-y-4&quot; variants={itemVariants}>
-          <h3 className=&quot;text-xl font-bold text-primary-blue">Our Services</h3>
-          <ul className=&quot;space-y-2">
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-xl font-bold text-primary-blue">Our Services</h3>
+          <ul className="space-y-2">
             <li>
-              <Link href=&quot;/services/crm&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/crm" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 CRM Implementation
               </Link>
             </li>
             <li>
-              <Link href=&quot;/services/technology-integration&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/technology-integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Technology Integration
               </Link>
             </li>
             <li>
-              <Link href=&quot;/services/marketing-automation&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/marketing-automation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Marketing Automation
               </Link>
             </li>
             <li>
-              <Link href=&quot;/services/integration&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/integration" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Custom Solutions
               </Link>
             </li>
             <li>
-              <Link href=&quot;/services/technologies/compare&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/technologies/compare" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 System Optimization
               </Link>
             </li>
             <li>
-              <Link href=&quot;/services/technologies&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/services/technologies" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Technology Consulting
               </Link>
             </li>
@@ -150,31 +150,31 @@ const Footer = () => {
         </motion.div>
 
         {/* Resources */}
-        <motion.div className=&quot;space-y-4&quot; variants={itemVariants}>
-          <h3 className=&quot;text-xl font-bold text-primary-blue">Resources</h3>
-          <ul className=&quot;space-y-2">
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-xl font-bold text-primary-blue">Resources</h3>
+          <ul className="space-y-2">
             <li>
-              <Link href=&quot;/resources&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/resources" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Resource Center
               </Link>
             </li>
             <li>
-              <Link href=&quot;/resources/document-creation&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/resources/document-creation" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Document Creation
               </Link>
             </li>
             <li>
-              <Link href=&quot;/affiliate-tools&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/affiliate-tools" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Affiliate Tools
               </Link>
             </li>
             <li>
-              <Link href=&quot;/case-studies&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/case-studies" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Case Studies
               </Link>
             </li>
             <li>
-              <Link href=&quot;/blog&quot; className=&quot;text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
+              <Link href="/blog" className="text-gray-300 hover:text-primary-blue transition-colors inline-block hover:translate-x-1 duration-200">
                 Blog & Articles
               </Link>
             </li>
@@ -182,23 +182,23 @@ const Footer = () => {
         </motion.div>
 
         {/* Newsletter */}
-        <motion.div className=&quot;space-y-4&quot; variants={itemVariants}>
-          <h3 className=&quot;text-xl font-bold text-primary-blue">Subscribe to Updates</h3>
-          <p className=&quot;text-sm text-gray-300">
+        <motion.div className="space-y-4" variants={itemVariants}>
+          <h3 className="text-xl font-bold text-primary-blue">Subscribe to Updates</h3>
+          <p className="text-sm text-gray-300">
             Stay informed about our latest AI tools, marketing strategies, and industry insights.
           </p>
-          <form className=&quot;space-y-2">
+          <form className="space-y-2">
             <div>
               <input
-                type=&quot;email&quot;
-                placeholder=&quot;Your email address&quot;
-                className=&quot;w-full px-4 py-2 rounded-md bg-primary-slate border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-500&quot;
+                type="email"
+                placeholder="Your email address"
+                className="w-full px-4 py-2 rounded-md bg-primary-slate border border-primary-slate focus:outline-none focus:ring-2 focus:ring-primary-blue text-white placeholder-gray-500"
                 required
               />
             </div>
             <motion.button
-              type=&quot;submit&quot;
-              className=&quot;w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors&quot;
+              type="submit"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -209,8 +209,8 @@ const Footer = () => {
       </motion.div>
 
       {/* Copyright */}
-      <div className=&quot;bg-primary-slate py-4 relative z-10">
-        <div className=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
+      <div className="bg-primary-slate py-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -220,19 +220,19 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Technology Alliance Solutions, INC. All rights reserved.
           </motion.p>
           <motion.div
-            className=&quot;flex space-x-4 mt-2 md:mt-0&quot;
+            className="flex space-x-4 mt-2 md:mt-0"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
             viewport={{ once: true }}
           >
-            <Link href=&quot;/privacy&quot; className=&quot;hover:text-primary-blue transition-colors">
+            <Link href="/privacy" className="hover:text-primary-blue transition-colors">
               Privacy Policy
             </Link>
-            <Link href=&quot;/terms&quot; className=&quot;hover:text-primary-blue transition-colors">
+            <Link href="/terms" className="hover:text-primary-blue transition-colors">
               Terms of Service
             </Link>
-            <Link href=&quot;/sitemap&quot; className=&quot;hover:text-primary-blue transition-colors">
+            <Link href="/sitemap" className="hover:text-primary-blue transition-colors">
               Sitemap
             </Link>
           </motion.div>

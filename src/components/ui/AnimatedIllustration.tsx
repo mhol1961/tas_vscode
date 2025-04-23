@@ -1,8 +1,8 @@
-&apos;use client';
+'use client';
 
-import { motion } from &apos;framer-motion';
-import Image from &apos;next/image';
-import React from &apos;react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import React from 'react';
 
 interface AnimatedIllustrationProps {
   src: string;
@@ -17,7 +17,7 @@ const AnimatedIllustration: React.FC<AnimatedIllustrationProps> = ({
   src, 
   alt, 
   delay = 0,
-  className = &apos;&apos;,
+  className = '',
   width = 400,
   height = 300
 }) => {
@@ -34,7 +34,7 @@ const AnimatedIllustration: React.FC<AnimatedIllustrationProps> = ({
         src={src}
         alt={alt}
         fill
-        className=&quot;object-contain&quot;
+        className="object-contain"
       />
     </motion.div>
   );

@@ -1,7 +1,7 @@
-&apos;use client';
+'use client';
 
-import { motion } from &apos;framer-motion';
-import React from &apos;react';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 interface AnimatedTextProps {
   text: string;
@@ -11,11 +11,11 @@ interface AnimatedTextProps {
 
 const AnimatedText: React.FC<AnimatedTextProps> = ({ 
   text, 
-  className = &apos;&apos;,
+  className = '',
   highlight = false
 }) => {
   // Split text into words for animation
-  const words = text.split(&apos; &apos;);
+  const words = text.split(' ');
   
   // Animation variants
   const container = {
@@ -31,7 +31,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
       opacity: 1,
       y: 0,
       transition: {
-        type: &apos;spring',
+        type: 'spring',
         damping: 12,
         stiffness: 100,
       },
@@ -40,7 +40,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
       opacity: 0,
       y: 20,
       transition: {
-        type: &apos;spring',
+        type: 'spring',
         damping: 12,
         stiffness: 100,
       },
@@ -51,21 +51,21 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
     <motion.div
       className={className}
       variants={container}
-      initial=&quot;hidden&quot;
-      animate=&quot;visible"
+      initial="hidden"
+      animate="visible"
     >
       {words.map((word, index) => (
         <React.Fragment key={index}>
           <motion.span
             variants={child}
             className={`inline-block ${
-              highlight ? &apos;text-gradient-primary' : &apos;&apos;
+              highlight ? 'text-gradient-primary' : ''
             }`}
           >
             {word}
           </motion.span>
           {/* Add space between spans, except after the last word */}
-          {index < words.length - 1 ? &apos; &apos; : &apos;&apos;}
+          {index < words.length - 1 ? ' ' : ''}
         </React.Fragment>
       ))}
     </motion.div>
