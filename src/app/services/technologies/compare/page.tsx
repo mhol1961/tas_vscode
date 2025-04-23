@@ -27,18 +27,17 @@ const CompareTechnologiesPage = () => {
               Technology Comparison
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Compare key features, costs, and aspects of the technologies we work with.
+              Compare key features and capabilities of the technologies we work with.
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold text-center mb-8 text-primary-navy">Overview & Cost</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-primary-navy">Technology Overview</h2>
           <div className="overflow-x-auto shadow-md rounded-lg">
             <table className="min-w-full bg-white border border-gray-200">
               <thead className="bg-blue-800 text-white">
                 <tr>
                   <th className="py-3 px-4 text-left font-semibold">Technology</th>
                   <th className="py-3 px-4 text-left font-semibold">Description</th>
-                  <th className="py-3 px-4 text-left font-semibold">Cost Summary</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -46,7 +45,6 @@ const CompareTechnologiesPage = () => {
                   <tr key={tech.slug} className="hover:bg-gray-100">
                     <td className="py-3 px-4 font-medium text-gray-900 whitespace-nowrap">{tech.title}</td>
                     <td className="py-3 px-4 text-gray-700">{tech.description}</td>
-                    <td className="py-3 px-4 text-gray-700 whitespace-nowrap">{tech.costSummary}</td>
                   </tr>
                 ))}
               </tbody>

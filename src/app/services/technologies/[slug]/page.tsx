@@ -112,7 +112,6 @@ const TechnologyDetailPage = () => {
               {/* Cost Factors Card */}
               <div className="bg-white dark:bg-primary-navy p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
                 <h2 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Cost Factors</h2>
-                 <p className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-3">Summary: {technology.costSummary}</p>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
                   {technology.costFactors.map((factor, index) => (
                     <li key={`cost-${index}`}>{factor}</li>

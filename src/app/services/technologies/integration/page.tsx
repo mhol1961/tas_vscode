@@ -176,10 +176,7 @@ export default function IntegrationTechnologiesPage() {
                         </div>
                       </div>
 
-                      <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                          {tech.costSummary}
-                        </span>
+                      <div className="flex justify-end items-center mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
                         <Link href={`/services/technologies/${tech.slug}`}>
                           <span className="text-primary-blue hover:text-primary-blue/80 text-sm font-medium flex items-center">
                             Learn more
