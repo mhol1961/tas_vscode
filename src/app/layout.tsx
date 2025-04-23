@@ -9,6 +9,14 @@ import { siteMetadata, generateMetadata, generateStructuredData } from '@/data/s
 // Configure the Inter font
 const inter = Inter({ subsets: ['latin'] });
 
+// Define viewport configuration separately as per Next.js 15+ recommendations
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 // Generate site-wide metadata
 export const metadata: Metadata = {
   ...generateMetadata(
@@ -18,12 +26,6 @@ export const metadata: Metadata = {
     '/'
   ),
   keywords: 'CRM implementation, technology integration, marketing automation, tech consulting, system optimization, enterprise solutions, business automation',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  }
 };
 
 export default function RootLayout({

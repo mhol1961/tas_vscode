@@ -302,6 +302,7 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -358,10 +359,12 @@ export default function ServicesPage() {
               <div>
                 <div className="bg-white dark:bg-primary-slate/50 rounded-xl shadow-xl overflow-hidden">
                   <div className="relative h-80">
-                    <Image 
+                    <Image
                       src="/images/photos/TwoLookingAtScreen.png"
                       alt="Technology Alliance Solutions Services"
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                       className="object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-blue/60 to-transparent"></div>
