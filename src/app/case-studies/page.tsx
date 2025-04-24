@@ -60,7 +60,7 @@ const caseStudies = [
       'Support staff efficiency improved by 58%',
       'Successful handling of 3,200+ daily inquiries'
     ],
-    image: '/images/photos/Two_people_looking_at_screen1.png?v=2', // Added cache buster
+    image: '/images/photos/Two_People_looking_at_screen1.png?v=2', // Added cache buster
     icon: FaUsers,
     bgColor: 'bg-purple-100 dark:bg-purple-900/30',
     iconColor: 'text-purple-600 dark:text-purple-400'
