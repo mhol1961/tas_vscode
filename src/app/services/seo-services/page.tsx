@@ -103,8 +103,8 @@ export default function SeoServicesPage() {
             </div>
             <div className="md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image 
-                src="/images/photos/WooRankImage.png" 
-                alt="SEO analytics dashboard" 
+                src="/images/photos/StandOutFRomCompetition.png" 
+                alt="Stand out from competition" 
                 fill 
                 className="object-cover"
               />
