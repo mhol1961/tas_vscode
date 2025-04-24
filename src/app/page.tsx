@@ -129,12 +129,12 @@ export default function Home() {
             [background-size:20px_20px] [background-position:0_0,10px_10px]"></div>
 
           {/* Content Container */}
-          <div className="relative h-full z-10 flex items-center">
+          <div className="relative h-full z-10 flex items-center justify-center min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 {/* Left column: Text content */}
                 <motion.div 
-                  className="text-white md:pr-8 pt-16 md:pt-0"
+                  className="text-white md:pr-8"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}

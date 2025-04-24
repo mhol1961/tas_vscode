@@ -52,7 +52,7 @@ const blogPosts = [
     author: 'Jacquelin Johnson',
     category: 'Sales',
     tags: ['Sales Enablement', 'Technology', 'Productivity'],
-    image: '/images/photos/Two_people_looking_at_screen1.png',
+    image: '/images/photos/Two_People_looking_at_screen1.png',
     featured: false
   },
   {
@@ -75,6 +75,72 @@ const blogPosts = [
     category: 'CRM',
     tags: ['AI', 'CRM', 'Technology Trends'],
     image: '/images/photos/Abstract_laptop.png',
+    featured: false
+  },
+  {
+    id: 'seo-best-practices-2025',
+    title: 'SEO Best Practices for Business Growth in 2025',
+    excerpt: 'Discover the latest search engine optimization strategies that are driving organic traffic and business growth in 2025.',
+    date: 'March 1, 2025',
+    author: 'Chris Johnson',
+    category: 'Marketing',
+    tags: ['SEO', 'Digital Marketing', 'Organic Traffic'],
+    image: '/images/photos/SEO_Services.png',
+    featured: false
+  },
+  {
+    id: 'email-marketing-automation-strategies',
+    title: 'Advanced Email Marketing Automation Strategies',
+    excerpt: 'Learn how to implement sophisticated email marketing automation workflows that nurture leads and drive conversions.',
+    date: 'February 22, 2025',
+    author: 'Jacquelin Johnson',
+    category: 'Marketing',
+    tags: ['Email Marketing', 'Automation', 'Lead Nurturing'],
+    image: '/images/photos/MArketingAtuomationPlatforms.png',
+    featured: false
+  },
+  {
+    id: 'reputation-management-digital-age',
+    title: 'Reputation Management in the Digital Age',
+    excerpt: 'Explore effective strategies for managing and improving your business reputation online through automated monitoring and response systems.',
+    date: 'February 15, 2025',
+    author: 'Chris Johnson',
+    category: 'Marketing',
+    tags: ['Reputation Management', 'Online Reviews', 'Brand Image'],
+    image: '/images/photos/StandOutFRomCompetition.png',
+    featured: false
+  },
+  {
+    id: 'lead-generation-techniques',
+    title: 'Innovative Lead Generation Techniques for B2B Companies',
+    excerpt: 'Discover cutting-edge approaches to generating high-quality leads for B2B companies using automation and AI-powered tools.',
+    date: 'February 8, 2025',
+    author: 'Jacquelin Johnson',
+    category: 'Sales',
+    tags: ['Lead Generation', 'B2B Marketing', 'Sales Automation'],
+    image: '/images/photos/LeadGenService.png',
+    featured: false
+  },
+  {
+    id: 'website-conversion-optimization',
+    title: 'Website Conversion Optimization: Turning Visitors into Customers',
+    excerpt: 'Learn proven techniques to optimize your website for higher conversion rates and better user engagement.',
+    date: 'February 1, 2025',
+    author: 'Chris Johnson',
+    category: 'Marketing',
+    tags: ['Conversion Optimization', 'UX Design', 'Website Analytics'],
+    image: '/images/photos/WebsiteConversion.png',
+    featured: false
+  },
+  {
+    id: 'gohighlevel-white-label-solutions',
+    title: 'Maximizing Business Growth with White-Labeled GoHighLevel Solutions',
+    excerpt: 'Explore how white-labeled GoHighLevel instances can help agencies scale their offerings and provide comprehensive marketing solutions to clients.',
+    date: 'January 25, 2025',
+    author: 'Jacquelin Johnson',
+    category: 'CRM',
+    tags: ['GoHighLevel', 'White Label', 'Agency Growth'],
+    image: '/images/photos/ClientSuccessStories.png',
     featured: false
   }
 ];
