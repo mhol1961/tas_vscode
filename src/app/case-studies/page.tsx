@@ -60,7 +60,7 @@ const caseStudies = [
       'Support staff efficiency improved by 58%',
       'Successful handling of 3,200+ daily inquiries'
     ],
-    image: '/images/photos/cust_service_trans.png?v=2', // Updated to use the new image
+    image: '/images/photos/cust_service_trans2.png?v=2', // Updated to use alternate image file
     icon: FaUsers,
     bgColor: 'bg-purple-100 dark:bg-purple-900/30',
     iconColor: 'text-purple-600 dark:text-purple-400'
