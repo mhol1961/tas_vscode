@@ -113,9 +113,6 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen, isDarkMode, mounted]);
 
-  // Avoid rendering logo based on theme until mounted to prevent hydration mismatch
-  // const logoSrc = mounted && isDarkMode ? "/images/TAS_logo.png" : "/images/TAS_LOGO3.png"; // Removed duplicate declaration
-
   return (
     <nav 
       ref={navRef} // Assign ref to nav element
@@ -130,10 +127,10 @@ export default function Navbar() {
           {/* Left Group: Logo Only */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 py-2">
-              <div className="relative h-12 w-36">
+              <div className="relative h-14 w-40"> {/* Reduced logo size to prevent wrapping */}
                 {/* Conditionally render logo based on dark mode state, only after mounting */}
                 {mounted && (
-                  <Image 
+                  <Image
                     key={logoSrc} // Add key to force re-render on src change if needed
                     src={logoSrc} 
                     alt="Technology Alliance Solutions Logo" 
@@ -161,7 +158,7 @@ export default function Navbar() {
           {/* Right Group: Nav Links Dark Mode Toggle and CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Desktop Menu Links */}
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 flex-nowrap">
               {navigation.map((item) => (
                 <div
                   key={item.name}
@@ -186,14 +183,14 @@ export default function Navbar() {
                 >
                   {item.submenu ? (
                     <div className="flex items-center">
-                      <Link href={item.href} className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 hover:scale-105">
+                      <Link href={item.href} className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red px-3 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 hover:scale-105">
                         {item.name}
                       </Link>
                     </div>
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red px-4 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 hover:scale-105" // Updated dark text/hover
+                      className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red px-3 py-2 text-sm font-bold rounded-full transition-all duration-150 hover:bg-primary-light/50 hover:scale-105" // Updated dark text/hover
                     >
                       {item.name}
                     </Link>
