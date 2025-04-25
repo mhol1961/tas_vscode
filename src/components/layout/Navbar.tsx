@@ -282,9 +282,13 @@ export default function Navbar() {
                   {item.submenu ? (
                     <>
                       <div className="flex flex-col">
-                        <Link href={item.href} className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red block px-3 py-3 text-base font-medium">
-                          {item.name}
-                        </Link>
+                    <Link 
+                      href={item.href} 
+                      className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red block px-3 py-3 text-base font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
                         <button
                           onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                           className="text-gray-500 dark:text-gray-400 text-sm font-medium px-3 py-2 flex items-center justify-between w-full"
@@ -304,6 +308,7 @@ export default function Navbar() {
                               key={subItem.name}
                               href={subItem.href}
                               className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red block px-3 py-3 text-sm touch-manipulation" // Updated mobile dropdown dark text/hover
+                              onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {subItem.name}
                             </Link>
@@ -315,6 +320,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       className="text-primary-navy dark:text-white hover:text-primary-blue dark:hover:text-primary-red block px-3 py-3 text-base font-medium touch-manipulation" // Updated mobile menu dark text/hover
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
@@ -324,7 +330,7 @@ export default function Navbar() {
               {/* CTA Button for Mobile Menu */}
               <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
                 {/* Wrap AnimatedButton in Link for navigation */}
-                <Link href="/contact" passHref>
+                <Link href="/contact" passHref onClick={() => setIsMobileMenuOpen(false)}>
                   <AnimatedButton
                     className="w-full justify-center bg-red-600 hover:bg-red-700 text-white border-transparent"
                   >

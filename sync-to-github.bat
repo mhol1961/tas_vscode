@@ -1,24 +1,20 @@
 @echo off
 echo ============================================
-echo Syncing fixed files to GitHub for deployment
+echo Syncing fixed files to GitHub dev branch
 echo ============================================
 
-echo 1. Adding all changed files to Git...
+echo 1. Ensuring we're on dev branch...
+git checkout dev
+
+echo 2. Adding all changed files to Git...
 git add .
 
-echo 2. Committing changes...
-git commit -m "Update website content and functionality"
+echo 3. Committing changes...
+git commit -m "Fix mobile menu links - auto-close menu on link click"
 
-echo 3. Switching to master branch...
-git checkout master
-
-echo 4. Merging changes from dev branch...
-git merge dev
-
-echo 5. Pushing both branches to GitHub...
+echo 4. Pushing to dev branch only...
 git push origin dev
-git push origin master
 
 echo ============================================
-echo Done! Your changes should now be deployed by Vercel.
+echo Done! Your changes have been pushed to the dev branch.
 echo ============================================
