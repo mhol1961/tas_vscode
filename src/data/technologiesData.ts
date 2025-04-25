@@ -72,7 +72,7 @@ export const technologies: { [key: string]: TechnologyDetails } = {
       'Additional costs for add-ons (e.g., CPQ, Pardot).',
       'Implementation and customization services often required.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/photos/salesforce_technologies_page.png',
     costSummary: 'Starts ~$25/user/mo (Essentials)',
     feature_contactManagement: true,
     feature_leadManagement: true,
