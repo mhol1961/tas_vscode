@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
     // Disable ESLint during builds
     ignoreDuringBuilds: true,
   },
+  // Add experimental server components configuration
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
   images: {
     remotePatterns: [
       {
