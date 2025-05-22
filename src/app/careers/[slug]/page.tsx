@@ -1,9 +1,16 @@
 import { Metadata } from 'next';
-import JobDetailClient from './client';
 import { fetchJobListingBySlug } from '@/data/jobListings';
+import JobDetailClient from './client';
+
+// Define the props type for the page component
+interface JobDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
 
 // Generate metadata for the job detail page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: JobDetailPageProps): Promise<Metadata> {
   // Fetch the job data
   const job = await fetchJobListingBySlug(params.slug);
   
@@ -25,6 +32,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function JobDetailPage({ params }: { params: { slug: string } }) {
+export default function JobDetailPage({ params }: JobDetailPageProps) {
   return <JobDetailClient slug={params.slug} />;
 }
