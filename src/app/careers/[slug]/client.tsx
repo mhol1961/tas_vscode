@@ -97,7 +97,7 @@ export default function JobDetailClient({ slug }: { slug: string }) {
         ) : job ? (
           <div>
             {/* Job header */}
-            <div className="bg-white dark:bg-primary-navy/30 rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-primary-navy rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <h1 className="text-3xl font-bold text-primary-navy dark:text-white">{job.title}</h1>
                 {job.featuredPosition && (
@@ -166,7 +166,7 @@ export default function JobDetailClient({ slug }: { slug: string }) {
             {/* Job details */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
-                <div className="bg-white dark:bg-primary-navy/30 rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
+                <div className="bg-white dark:bg-primary-navy rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
                   <h2 className="text-2xl font-bold text-primary-navy dark:text-white mb-4">Job Description</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line">{job.fullDescription}</p>
                   
@@ -208,7 +208,7 @@ export default function JobDetailClient({ slug }: { slug: string }) {
               <div>
                 {/* Benefits section */}
                 {job.benefits && job.benefits.length > 0 && (
-                  <div className="bg-white dark:bg-primary-navy/30 rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
+                  <div className="bg-white dark:bg-primary-navy rounded-lg shadow-md p-6 mb-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold text-primary-navy dark:text-white mb-4">Benefits</h3>
                     <ul className="space-y-4">
                       {job.benefits.map((benefit) => (
@@ -225,7 +225,7 @@ export default function JobDetailClient({ slug }: { slug: string }) {
                 )}
                 
                 {/* Company info */}
-                <div className="bg-white dark:bg-primary-navy/30 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+                <div className="bg-white dark:bg-primary-navy rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-xl font-semibold text-primary-navy dark:text-white mb-4">About Technology Alliance Solutions</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Technology Alliance Solutions is a leading provider of CRM implementation, system integration, and marketing automation expertise. We help businesses optimize their operations and accelerate growth through technology.

@@ -403,21 +403,23 @@ export default function CareersClient() {
                     </div>
                     
                     <div className="flex justify-between items-center">
-                      {job.salary?.isVisible && (
-                        <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {job.salary.min && job.salary.max ? (
-                            <>
-                              {job.jobType === 'contract' ? (
-                                <>${job.salary.min}-${job.salary.max}/hr</>
-                              ) : (
-                                <>${job.salary.min.toLocaleString()}-${job.salary.max.toLocaleString()}/year</>
-                              )}
-                            </>
-                          ) : (
-                            'Competitive salary'
-                          )}
-                        </div>
-                      )}
+                      <div>
+                        {job.salary?.isVisible && (
+                          <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            {job.salary.min && job.salary.max ? (
+                              <>
+                                {job.jobType === 'contract' ? (
+                                  <>${job.salary.min}-${job.salary.max}/hr</>
+                                ) : (
+                                  <>${job.salary.min.toLocaleString()}-${job.salary.max.toLocaleString()}/year</>
+                                )}
+                              </>
+                            ) : (
+                              'Competitive salary'
+                            )}
+                          </div>
+                        )}
+                      </div>
                       <Link href={job.applicationUrl || `/careers/${job.slug}`}>
                         <AnimatedButton className="bg-primary-blue hover:bg-primary-blue/90 text-white border-transparent">
                           View Details <FaChevronRight className="ml-1" />
