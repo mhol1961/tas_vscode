@@ -146,13 +146,13 @@ export default function CareersClient() {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold mb-6 text-primary-navy dark:text-white">Our Culture</h2>
               <p className="text-lg text-primary-slate dark:text-gray-300 mb-4">
-                At Technology Alliance Solutions, we&apos;re passionate about helping businesses leverage technology to achieve their goals. Our team is made up of innovative thinkers, problem solvers, and technology enthusiasts who thrive in a collaborative environment.
+                At Technology Alliance Solutions, we're passionate about helping businesses leverage technology to achieve their goals. Our team is made up of innovative thinkers, problem solvers, and technology enthusiasts who thrive in a collaborative environment.
               </p>
               <p className="text-lg text-primary-slate dark:text-gray-300 mb-4">
                 We value continuous learning, creative thinking, and a customer-first mindset. Our work environment encourages professional growth, work-life balance, and the pursuit of excellence in everything we do.
               </p>
               <p className="text-lg text-primary-slate dark:text-gray-300">
-                If you&apos;re looking for a challenging and rewarding career where your contributions make a real difference, we&apos;d love to hear from you.
+                If you're looking for a challenging and rewarding career where your contributions make a real difference, we'd love to hear from you.
               </p>
             </div>
             <div className="md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
@@ -487,7 +487,7 @@ export default function CareersClient() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary-blue mr-2">✓</span>
-                    <span>Prepare specific examples of projects you&apos;ve worked on and challenges you&apos;ve overcome.</span>
+                    <span>Prepare specific examples of projects you've worked on and challenges you've overcome.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary-blue mr-2">✓</span>

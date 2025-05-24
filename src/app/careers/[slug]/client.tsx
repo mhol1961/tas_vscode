@@ -87,7 +87,7 @@ export default function JobDetailClient({ slug }: { slug: string }) {
         ) : error ? (
           <div className="text-center py-20">
             <h2 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-4">{error}</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">The job listing you&apos;re looking for might have been removed or is no longer available.</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-8">The job listing you're looking for might have been removed or is no longer available.</p>
             <Link href="/careers">
               <AnimatedButton className="bg-primary-blue hover:bg-primary-blue/90 text-white border-transparent">
                 View All Positions
