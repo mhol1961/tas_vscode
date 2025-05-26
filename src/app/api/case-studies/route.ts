@@ -29,11 +29,14 @@ export async function GET(request: NextRequest) {
       filteredCaseStudies = filteredCaseStudies.filter(cs => cs.featured);
     }
     
-    // Sort by published date (newest first)
+    // Sort by ID (assuming newer case studies have higher IDs)
     filteredCaseStudies.sort((a, b) => {
-      const dateA = new Date(a.published_at).getTime();
-      const dateB = new Date(b.published_at).getTime();
-      return dateB - dateA;
+      // Convert IDs to numbers if possible, otherwise compare as strings
+      const idA = parseInt(a.id) || a.id;
+      const idB = parseInt(b.id) || b.id;
+      return typeof idA === 'number' && typeof idB === 'number' 
+        ? idB - idA  // Sort numerically if both are numbers
+        : String(idB).localeCompare(String(idA));  // Sort as strings otherwise
     });
     
     return NextResponse.json({
