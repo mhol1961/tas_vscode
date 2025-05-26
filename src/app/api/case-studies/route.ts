@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
       filteredCaseStudies = filteredCaseStudies.filter(cs => cs.featured);
     }
     
-    // Sort by ID (assuming newer case studies have higher IDs)
+    // Sort by ID (newest first)
     filteredCaseStudies.sort((a, b) => {
       // Convert IDs to numbers if possible, otherwise compare as strings
       const idA = parseInt(a.id) || a.id;
