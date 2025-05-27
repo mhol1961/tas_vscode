@@ -7,15 +7,18 @@ interface AnimatedSectionProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  id?: string;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   delay = 0,
-  className = ''
+  className = '',
+  id
 }) => {
   return (
     <motion.section
+      id={id}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay }}
