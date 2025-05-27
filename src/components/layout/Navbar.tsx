@@ -24,11 +24,13 @@ const navigation = [
       { name: 'Technology Integration', href: '/services/technology-integration' },
       { name: 'Marketing Automation', href: '/services/marketing-automation' },
       { name: 'Custom Solutions', href: '/services/custom-solutions' },
-      { name: 'System Optimization', href: '/services/system-optimization' },
-      { name: 'Technology Consulting', href: '/services/technologies' }
+      { name: 'System Optimization', href: '/services/system-optimization' }
     ]
   },
-  { name: 'About Us', href: '/about' },
+  { 
+    name: 'About Us', 
+    href: '/about'
+  },
   { name: 'Why Choose Us', href: '/why-choose-us' },
   { 
     name: 'Technologies', 
@@ -40,7 +42,6 @@ const navigation = [
       { name: 'Compare Solutions', href: '/services/technologies/compare' }
     ]
   },
-  { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' }
