@@ -4,9 +4,9 @@ import { getJobById, getAllJobs } from '@/data/jobListings';
 import PageLayout from '@/components/layout/PageLayout';
 
 interface JobDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: JobDetailPageProps): Promise<Metadata> {
-  const job = getJobById(params.slug);
+  const { slug } = await params;
+  const job = getJobById(slug);
   
   if (!job) {
     return {
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }: JobDetailPageProps): Promise<
   };
 }
 
-export default function JobDetailPage({ params }: JobDetailPageProps) {
-  const job = getJobById(params.slug);
+export default async function JobDetailPage({ params }: JobDetailPageProps) {
+  const { slug } = await params;
+  const job = getJobById(slug);
 
   if (!job) {
     notFound();
